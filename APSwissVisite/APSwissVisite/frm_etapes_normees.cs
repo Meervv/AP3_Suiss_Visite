@@ -17,9 +17,25 @@ namespace APSwissVisite
             InitializeComponent();
         }
 
+        private void chargerListe()
+        {
+            lvEtapeNormee.Items.Clear();
+
+            SQL.lireLesEtapes();
+
+            foreach(Etape lEtape in Globale.lesEtapes)
+            {
+                ListViewItem maLigne = new ListViewItem();
+                maLigne.Text = lEtape.getNum().ToString();
+                maLigne.SubItems.Add(lEtape.getLibelle());
+                maLigne.SubItems.Add("");
+                lvEtapeNormee.Items.Add(maLigne);
+            }
+
+        }
         private void frm_etapes_normees_Load(object sender, EventArgs e)
         {
-
+            chargerListe();
         }
     }
 }

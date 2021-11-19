@@ -63,7 +63,7 @@
     <Compile Include="frm_etapes_normees.Designer.cs">
       <DependentUpon>frm_etapes_normees.cs</DependentUpon>
     </Compile>
-    <Compile Include="globale.cs" />
+    <Compile Include="Globale.cs" />
     <Compile Include="Medicament.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

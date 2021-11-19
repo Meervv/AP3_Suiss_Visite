@@ -7,8 +7,8 @@ using System.Data.SqlClient;
 
 namespace APSwissVisite
 {
-    class globale
+    class Globale
     {
-        public static SqlConnection cnx;
+        public static List<Etape> lesEtapes = new List<Etape>();
     }
 }

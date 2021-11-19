@@ -57,6 +57,13 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_etapes_normees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_etapes_normees.Designer.cs">
+      <DependentUpon>frm_etapes_normees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="globale.cs" />
     <Compile Include="Medicament.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -64,6 +71,9 @@
     <Compile Include="Workflow.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_etapes_normees.resx">
+      <DependentUpon>frm_etapes_normees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

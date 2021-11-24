@@ -22,16 +22,20 @@ namespace APSwissVisite
             lvEtapeNormee.Items.Clear();
 
             SQL.lireLesEtapes();
+            SQL.lireLesEtapesNormees();
 
-            foreach(Etape lEtape in Globale.lesEtapes)
+            foreach (Etape lEtape in Globale.lesEtapes)
             {
-                ListViewItem maLigne = new ListViewItem();
-                maLigne.Text = lEtape.getNum().ToString();
-                maLigne.SubItems.Add(lEtape.getLibelle());
-                maLigne.SubItems.Add("");
-                lvEtapeNormee.Items.Add(maLigne);
+                if (lEtape.GetType().Name == "EtapeNormee")
+                {
+                    ListViewItem maLigne = new ListViewItem();
+                    maLigne.Text = lEtape.getNum().ToString();
+                    maLigne.SubItems.Add(lEtape.getLibelle());
+                    maLigne.SubItems.Add((lEtape as EtapeNormee).getDateNorme().ToString());
+                    lvEtapeNormee.Items.Add(maLigne);
+                } 
+                
             }
-
         }
         private void frm_etapes_normees_Load(object sender, EventArgs e)
         {

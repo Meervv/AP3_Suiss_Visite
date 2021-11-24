@@ -10,5 +10,6 @@ namespace APSwissVisite
     class Globale
     {
         public static List<Etape> lesEtapes = new List<Etape>();
+        public static List<EtapeNormee> lesEtapesNormee = new List<EtapeNormee>();
     }
 }

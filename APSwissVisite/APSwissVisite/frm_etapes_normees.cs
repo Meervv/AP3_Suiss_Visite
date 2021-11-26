@@ -43,7 +43,19 @@ namespace APSwissVisite
 
         private void lvEtapeNormee_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (lvEtapeNormee.SelectedIndices.Count <= 0)
+            {
+                return;
+            }
+            int idx = lvEtapeNormee.SelectedIndices[0];
             
+            if (idx >= 0)
+            {
+                string res = lvEtapeNormee.Items[idx].Text;
+                frm_modifEtape newFrm = new frm_modifEtape();
+                WindowState = FormWindowState.Maximized;
+                newFrm.Show();
+            }
         }
     }
 }

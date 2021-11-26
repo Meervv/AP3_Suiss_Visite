@@ -44,6 +44,7 @@ namespace APSwissVisite
             this.lvEtapeNormee.FullRowSelect = true;
             this.lvEtapeNormee.HideSelection = false;
             this.lvEtapeNormee.Location = new System.Drawing.Point(33, 41);
+            this.lvEtapeNormee.MultiSelect = false;
             this.lvEtapeNormee.Name = "lvEtapeNormee";
             this.lvEtapeNormee.Size = new System.Drawing.Size(497, 397);
             this.lvEtapeNormee.TabIndex = 0;
@@ -72,6 +73,7 @@ namespace APSwissVisite
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1396, 685);
             this.Controls.Add(this.lvEtapeNormee);
+            this.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.Name = "frm_etapes_normees";
             this.Text = "frm_etapes_normees";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

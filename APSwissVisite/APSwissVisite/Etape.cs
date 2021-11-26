@@ -20,9 +20,7 @@ namespace APSwissVisite
         }
 
         public int getNum() { return this.num; }
-
         public string getLibelle() { return this.libelle; }
-
         public List<EtapeNormee> getLesEtapesNormees() { return this.lesEtapesNormees; }
     }
 }

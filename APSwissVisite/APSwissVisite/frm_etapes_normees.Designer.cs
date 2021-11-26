@@ -49,6 +49,7 @@ namespace APSwissVisite
             this.lvEtapeNormee.TabIndex = 0;
             this.lvEtapeNormee.UseCompatibleStateImageBehavior = false;
             this.lvEtapeNormee.View = System.Windows.Forms.View.Details;
+            this.lvEtapeNormee.SelectedIndexChanged += new System.EventHandler(this.lvEtapeNormee_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -69,10 +70,11 @@ namespace APSwissVisite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1396, 685);
             this.Controls.Add(this.lvEtapeNormee);
             this.Name = "frm_etapes_normees";
             this.Text = "frm_etapes_normees";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_etapes_normees_Load);
             this.ResumeLayout(false);
 

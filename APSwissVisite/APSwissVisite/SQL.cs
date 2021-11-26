@@ -38,7 +38,7 @@ namespace APSwissVisite
                 EtapeNormee lEtapeNormee = new EtapeNormee(numEtape, libelleEtape, norme, dateNorme);
 
                 Globale.lesEtapes.Add(lEtape);
-               Globale.lesEtapesNormee.Add(lEtapeNormee);
+                Globale.lesEtapes.Add(lEtapeNormee);
             }
             Connexion.Close();
         }

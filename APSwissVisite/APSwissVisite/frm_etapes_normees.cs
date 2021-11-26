@@ -25,19 +25,25 @@ namespace APSwissVisite
 
             foreach (Etape lEtape in Globale.lesEtapes)
             {
-                ListViewItem maLigne = new ListViewItem();
-                maLigne.Text = lEtape.getNum().ToString();
-                maLigne.SubItems.Add(lEtape.getLibelle());
-                if (lEtape.GetType().Name == "EtapeNormee")
-                    maLigne.SubItems.Add((lEtape as EtapeNormee).getDateNorme().ToString());
- /*               foreach (EtapeNormee etape in Globale.lesEtapesNormee)
-                    maLigne.SubItems.Add(etape.getDateNorme().ToString());*/
-                lvEtapeNormee.Items.Add(maLigne);
+                if (lEtape.GetType() == typeof(EtapeNormee)) //check le type de la class
+                {
+                    EtapeNormee etape = (EtapeNormee)lEtape;
+                    ListViewItem ligne = new ListViewItem();
+                    ligne.Text = etape.getNum().ToString();
+                    ligne.SubItems.Add(etape.getLibelle());
+                    ligne.SubItems.Add(etape.getNorme());
+                    lvEtapeNormee.Items.Add(ligne);
+                }
             }
         }
         private void frm_etapes_normees_Load(object sender, EventArgs e)
         {
             chargerListe();
+        }
+
+        private void lvEtapeNormee_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

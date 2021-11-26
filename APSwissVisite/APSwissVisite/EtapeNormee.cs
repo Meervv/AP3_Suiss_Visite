@@ -10,7 +10,7 @@ namespace APSwissVisite
     {
         private string norme;
         private DateTime date;
-        public EtapeNormee(int num, string libelle, int normee, string laNorme, DateTime dateNorme) : base(num, libelle, normee)
+        public EtapeNormee(int num, string libelle, string laNorme, DateTime dateNorme) : base(num, libelle)
         {
             this.norme = laNorme;
             this.date = dateNorme;

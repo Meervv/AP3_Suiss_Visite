@@ -8,3 +8,4 @@ C:\Users\demaisoy\Documents\C#\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\
 C:\Users\demaisoy\Documents\C#\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.csproj.CoreCompileInputs.cache
 C:\Users\demaisoy\Documents\C#\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.exe
 C:\Users\demaisoy\Documents\C#\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.pdb
+C:\Users\demaisoy\Documents\C#\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.FormSaisieDecisionEtape.resources

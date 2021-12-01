@@ -55,6 +55,12 @@
       <DependentUpon>AjoutMedicament.cs</DependentUpon>
     </Compile>
     <Compile Include="Decision.cs" />
+    <Compile Include="Encoure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Encoure.Designer.cs">
+      <DependentUpon>Encoure.cs</DependentUpon>
+    </Compile>
     <Compile Include="Etape.cs" />
     <Compile Include="EtapeNormee.cs" />
     <Compile Include="Famille.cs" />
@@ -71,6 +77,9 @@
     <Compile Include="Workflow.cs" />
     <EmbeddedResource Include="AjoutMedicament.resx">
       <DependentUpon>AjoutMedicament.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Encoure.resx">
+      <DependentUpon>Encoure.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

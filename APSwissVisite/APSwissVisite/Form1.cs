@@ -25,5 +25,12 @@ namespace APSwissVisite
             form.Show();
             Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Encoure form = new Encoure();
+            form.Show();
+            Hide();
+        }
     }
 }

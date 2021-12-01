@@ -62,7 +62,7 @@ namespace APSwissVisite
         private void cbAjout_Click(object sender, EventArgs e)
         {
             SQL.AjoutMedicament(tbDepotLegal.Text, tbNomCommercial.Text, cbCodeFamille.Text, float.Parse(tbPrixEchantillon.Text), rtbCompoMed.Text, rtbEffetMed.Text, rtbContreIndic.Text);
-            MessageBox.Show("aaaaaaaaaaaaaaaa");
+            MessageBox.Show("le medicament à été ajouter");
         }
 
         private void tbDepotLegal_TextChanged(object sender, EventArgs e)

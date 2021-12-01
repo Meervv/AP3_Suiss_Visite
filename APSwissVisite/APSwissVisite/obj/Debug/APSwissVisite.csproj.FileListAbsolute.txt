@@ -20,3 +20,4 @@ C:\Users\carnesct\Documents\workspace\AP3_Suiss_Visite\APSwissVisite\APSwissVisi
 C:\Users\carnesct\Documents\workspace\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.exe
 C:\Users\carnesct\Documents\workspace\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.pdb
 C:\Users\carnesct\Documents\workspace\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.AjoutMedicament.resources
+C:\Users\carnesct\Documents\workspace\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.Encoure.resources

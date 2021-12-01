@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace APSwissVisite
 {
-    public sealed class Etape
+    public class Etape
     {
+        public static List<Etape> LesEtapes = new List<Etape>();
+
+        public int Num;
+        public string Libelle;
+
+        public Etape(int num, string libelle)
+        {
+            (Num, Libelle) = (num, libelle);
+            LesEtapes.Add(this);
+        }
     }
 }

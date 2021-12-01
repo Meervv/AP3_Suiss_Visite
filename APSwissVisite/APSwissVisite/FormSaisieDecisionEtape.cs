@@ -18,7 +18,9 @@ namespace APSwissVisite
 
         private void UpdatelastEtape()
         {
-            //TbLastEtapeNum.Text = 
+            Etape lastEtape = GetEtapeByID(MedicamentGetLastEtape(Current));
+            TbLastEtapeNum.Text = lastEtape.Num.ToString();
+            TbLastEtapeLibelle.Text = lastEtape.Libelle;
         }
 
         #endregion
@@ -37,13 +39,16 @@ namespace APSwissVisite
             if (IsMedicamentValid(Current))
             {
                 GbLastEtape.Visible = true;
+                GbNextEtape.Visible = true;
                 //LblMedicState.Location = new Point(447, 103); Relative coords:(
                 LblMedicState.Text = "VALIDE";
                 LblMedicState.ForeColor = Color.Green;
+                UpdatelastEtape();
             }
             else
             {
                 GbLastEtape.Visible = false;
+                GbNextEtape.Visible = false;
                 //LblMedicState.Location = new Point(435, 103);
                 LblMedicState.Text = "INVALIDE";
                 LblMedicState.ForeColor = Color.Red;

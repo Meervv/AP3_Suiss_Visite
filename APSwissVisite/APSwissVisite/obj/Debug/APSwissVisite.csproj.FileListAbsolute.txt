@@ -8,3 +8,15 @@ C:\Users\demaisoy\Documents\C#\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\
 C:\Users\demaisoy\Documents\C#\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.csproj.CoreCompileInputs.cache
 C:\Users\demaisoy\Documents\C#\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.exe
 C:\Users\demaisoy\Documents\C#\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.pdb
+C:\Users\carnesct\Documents\workspace\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\bin\Debug\APSwissVisite.exe.config
+C:\Users\carnesct\Documents\workspace\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\bin\Debug\APSwissVisite.exe
+C:\Users\carnesct\Documents\workspace\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\bin\Debug\APSwissVisite.pdb
+C:\Users\carnesct\Documents\workspace\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.csproj.AssemblyReference.cache
+C:\Users\carnesct\Documents\workspace\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.csproj.SuggestedBindingRedirects.cache
+C:\Users\carnesct\Documents\workspace\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.Form1.resources
+C:\Users\carnesct\Documents\workspace\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.Properties.Resources.resources
+C:\Users\carnesct\Documents\workspace\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.csproj.GenerateResource.cache
+C:\Users\carnesct\Documents\workspace\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.csproj.CoreCompileInputs.cache
+C:\Users\carnesct\Documents\workspace\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.exe
+C:\Users\carnesct\Documents\workspace\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.pdb
+C:\Users\carnesct\Documents\workspace\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.AjoutMedicament.resources

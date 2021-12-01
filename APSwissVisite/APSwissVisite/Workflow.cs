@@ -8,5 +8,6 @@ namespace APSwissVisite
 {
     public sealed class Workflow
     {
+
     }
 }

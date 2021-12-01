@@ -14,6 +14,16 @@ namespace APSwissVisite
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //FetchFamille();
+            //// FetchDecisions();
+            //FetchMedicaments();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AjoutMedicament form = new AjoutMedicament();
+            form.Show();
+            Hide();
         }
     }
 }

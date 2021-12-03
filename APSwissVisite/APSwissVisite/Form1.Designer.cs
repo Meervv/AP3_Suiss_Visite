@@ -32,8 +32,8 @@ namespace APSwissVisite
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.listeÉtapesNorméesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.listeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,12 +55,7 @@ namespace APSwissVisite
             this.listeÉtapesNorméesToolStripMenuItem.Name = "listeÉtapesNorméesToolStripMenuItem";
             this.listeÉtapesNorméesToolStripMenuItem.Size = new System.Drawing.Size(128, 24);
             this.listeÉtapesNorméesToolStripMenuItem.Text = "Etapes normées";
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.listeÉtapesNorméesToolStripMenuItem.Click += new System.EventHandler(this.listeÉtapesNorméesToolStripMenuItem_Click);
             // 
             // listeToolStripMenuItem
             // 
@@ -68,6 +63,12 @@ namespace APSwissVisite
             this.listeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.listeToolStripMenuItem.Text = "Liste";
             this.listeToolStripMenuItem.Click += new System.EventHandler(this.listeToolStripMenuItem_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // Form1
             // 

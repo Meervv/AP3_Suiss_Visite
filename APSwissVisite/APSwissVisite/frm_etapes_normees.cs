@@ -16,12 +16,9 @@ namespace APSwissVisite
         {
             InitializeComponent();
         }
-
         private void chargerListe()
         {
-            lvEtapeNormee.Items.Clear();
-
-            SQL.lireLesEtapes();
+//            lvEtapeNormee.Items.Clear();
 
             foreach (Etape lEtape in Globale.lesEtapes)
             {
@@ -32,12 +29,15 @@ namespace APSwissVisite
                     ligne.Text = etape.getNum().ToString();
                     ligne.SubItems.Add(etape.getLibelle());
                     ligne.SubItems.Add(etape.getNorme());
+                    ligne.SubItems.Add(etape.getDateNorme().ToString());
                     lvEtapeNormee.Items.Add(ligne);
                 }
             }
         }
         private void frm_etapes_normees_Load(object sender, EventArgs e)
         {
+            lvEtapeNormee.Items.Clear();
+            SQL.lireLesEtapes();
             chargerListe();
         }
 
@@ -51,9 +51,10 @@ namespace APSwissVisite
             
             if (idx >= 0)
             {
-                string res = lvEtapeNormee.Items[idx].Text;
-                frm_modifEtape newFrm = new frm_modifEtape();
-                WindowState = FormWindowState.Maximized;
+                string norm = lvEtapeNormee.Items[idx].SubItems[2].Text;
+                string date = lvEtapeNormee.Items[idx].SubItems[3].Text;
+                frm_modifEtape newFrm = new frm_modifEtape(idx, norm, date);
+                newFrm.TopMost = true;
                 newFrm.Show();
             }
         }

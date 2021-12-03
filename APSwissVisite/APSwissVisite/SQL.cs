@@ -1,5 +1,7 @@
 ﻿using System.Data.SqlClient;
 using System.Data;
+using System;
+using System.Collections.Generic;
 
 namespace APSwissVisite
 {
@@ -29,9 +31,14 @@ namespace APSwissVisite
             }
 
             Connexion.Close();
+
+            foreach (Medicament M in Medicament.LesMedicaments.Values)
+            {
+                GetMedicamentWorkflow(M);
+            }
         }
 
-        public static void AjoutMedicament(string tbDepotLegal, string tbNomCommercial, string cbCodeFamille, float tbPrixEchantillon, string rtbCompoMed, string rtbEffetMed, string rtbContreIndic )
+        public static void AjoutMedicament(string tbDepotLegal, string tbNomCommercial, string cbCodeFamille, float tbPrixEchantillon, string rtbCompoMed, string rtbEffetMed, string rtbContreIndic)
         {
             Connexion.Open();
             SqlCommand command = new SqlCommand("prc_ajout_medicament", Connexion);
@@ -40,7 +47,7 @@ namespace APSwissVisite
             command.Parameters.Add(param);
             SqlParameter param2 = new SqlParameter("@NomCommercial", SqlDbType.NVarChar, 25) { Value = tbNomCommercial };
             command.Parameters.Add(param2);
-            SqlParameter param3 = new SqlParameter("@CodeFamille", SqlDbType.NVarChar, 3) {  Value = cbCodeFamille };
+            SqlParameter param3 = new SqlParameter("@CodeFamille", SqlDbType.NVarChar, 3) { Value = cbCodeFamille };
             command.Parameters.Add(param3);
             SqlParameter param4 = new SqlParameter("@PrixEchantillion", SqlDbType.Real, 15) { Value = tbPrixEchantillon };
             command.Parameters.Add(param4);
@@ -82,8 +89,69 @@ namespace APSwissVisite
                 string code = (string)result["FAM_CODE"];
                 string libelle = (string)result["FAM_LIBELLE"];
 
-                new Famille(code,  libelle);
+                new Famille(code, libelle);
             }
+            Connexion.Close();
+        }
+
+        public static void FetchWorkFlow()
+        {
+            Connexion.Open();
+            SqlCommand command = new SqlCommand("prc_fetch_workflow", Connexion);
+            command.CommandType = CommandType.StoredProcedure;
+            SqlDataReader result = command.ExecuteReader();
+
+            while (result.Read())
+            {
+                DateTime datedecision = (DateTime)result["dateDecision"];
+                int numetape = (int)result["numEtape"];
+                int iddecision = (int)result["idDecision"];
+                string depotlegal = (string)result["medDepotLegal"];
+
+                new Workflow(datedecision, numetape, iddecision, depotlegal); // Ajouté direct au dico
+            }
+
+            Connexion.Close();
+        }
+        public static void GetMedicamentWorkflow(Medicament M)
+        {
+            if (Connexion.State == ConnectionState.Closed) Connexion.Open();
+
+            List<Workflow> workflows = new List<Workflow>();
+
+            SqlCommand command = new SqlCommand("prc_getMedicamentWorkflow", Connexion) { CommandType = CommandType.StoredProcedure };
+            SqlParameter param = new SqlParameter("@depotLegal", SqlDbType.VarChar, 10) { Value = M.DepotLegal };
+            command.Parameters.Add(param);
+
+            SqlDataReader result = command.ExecuteReader();
+
+            while (result.Read())
+            {
+                DateTime dateDecision = DateTime.Parse(result["dateDecision"].ToString());
+                int numEtape = (int)result["numEtape"];
+                int idDecision = (int)result["idDecision"];
+                workflows.Add(new Workflow( dateDecision, numEtape, idDecision, M.DepotLegal));
+            }
+
+            M.LesEtapes = workflows;
+            Connexion.Close();
+        }
+        public static void FetchDecision()
+        {
+            Connexion.Open();
+            SqlCommand command = new SqlCommand("prc_fetch_decision", Connexion);
+            command.CommandType = CommandType.StoredProcedure;
+            SqlDataReader result = command.ExecuteReader();
+
+            while (result.Read())
+            {
+
+                int iddecision = (int)result["id"];
+                string libelledecision = (string)result["libelle"];
+
+                new Decision(iddecision, libelledecision); // Ajouté direct au dico
+            }
+
             Connexion.Close();
         }
     }

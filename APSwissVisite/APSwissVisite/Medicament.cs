@@ -16,7 +16,7 @@ namespace APSwissVisite
         public string Effets;
         public string ContreIndications;
         public Famille Famille;
-        public List<Workflow> LesEtapes = new List<Workflow>();
+        public List<Workflow> LesEtapes;
 
         public Medicament(string depotLegal, string nomCommercial, string composition, string effets, string contreIndications, string codeFamille)
         {

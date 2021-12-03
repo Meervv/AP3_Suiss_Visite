@@ -14,9 +14,10 @@ namespace APSwissVisite
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //FetchFamille();
+            FetchFamille();
             //// FetchDecisions();
-            //FetchMedicaments();
+            FetchMedicaments();
+            FetchDecision();
         }
 
         private void button1_Click(object sender, EventArgs e)

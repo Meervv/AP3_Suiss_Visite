@@ -18,5 +18,8 @@ namespace APSwissVisite
             (ID, Libelle) = (id, libelle);
             LesDecisions.Add(this);
         }
+
+        public override string ToString()
+            => $"{ID} ; {Libelle}";
     }
 }

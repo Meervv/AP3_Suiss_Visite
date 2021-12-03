@@ -1,9 +1,6 @@
 ﻿using System.Data.SqlClient;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
 
 namespace APSwissVisite
 {
@@ -39,7 +36,26 @@ namespace APSwissVisite
 
                 Globale.lesEtapes.Add(lEtape);
                 Globale.lesEtapes.Add(lEtapeNormee);
+                //Globale.lesEtapesNormee.Add(lEtapeNormee);
             }
+            Connexion.Close();
+        }
+
+        public static void updateEtape(string norme, DateTime date, int id)
+        {
+            Connexion.Open();
+            SqlCommand maRequete = new SqlCommand("prc_updateEtapes", Connexion) { CommandType = CommandType.StoredProcedure };
+            
+            SqlParameter paramNorme = new SqlParameter("@norme", SqlDbType.VarChar, 100) { Value = norme };
+            SqlParameter paramDate = new SqlParameter("@date", SqlDbType.DateTime) { Value = date };
+            SqlParameter paramId = new SqlParameter("@id", SqlDbType.Int, 5) { Value = id };
+
+            maRequete.Parameters.Add(paramNorme);
+            maRequete.Parameters.Add(paramDate);
+            maRequete.Parameters.Add(paramId);
+
+            maRequete.ExecuteNonQuery();
+
             Connexion.Close();
         }
     }

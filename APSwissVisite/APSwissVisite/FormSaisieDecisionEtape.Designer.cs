@@ -48,19 +48,20 @@ namespace APSwissVisite
             this.TbLastEtapeNum = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.GbNextEtape = new System.Windows.Forms.GroupBox();
-            this.DtpDateDecision = new System.Windows.Forms.DateTimePicker();
-            this.TbNextEtapeNum = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.RbRefuse = new System.Windows.Forms.RadioButton();
-            this.RbValide = new System.Windows.Forms.RadioButton();
-            this.label11 = new System.Windows.Forms.Label();
-            this.TbNextEtapeLibelle = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.TbNextEtapeNomNorme = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.TbNextEtapeLibelle = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.RbValide = new System.Windows.Forms.RadioButton();
+            this.RbRefuse = new System.Windows.Forms.RadioButton();
+            this.label10 = new System.Windows.Forms.Label();
+            this.TbNextEtapeNum = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.DtpDateDecision = new System.Windows.Forms.DateTimePicker();
+            this.BtnValider = new System.Windows.Forms.Button();
             this.GbMedic.SuspendLayout();
             this.GbLastEtape.SuspendLayout();
             this.GbNextEtape.SuspendLayout();
@@ -252,6 +253,7 @@ namespace APSwissVisite
             // 
             // GbNextEtape
             // 
+            this.GbNextEtape.Controls.Add(this.BtnValider);
             this.GbNextEtape.Controls.Add(this.textBox1);
             this.GbNextEtape.Controls.Add(this.TbNextEtapeNomNorme);
             this.GbNextEtape.Controls.Add(this.label13);
@@ -267,100 +269,11 @@ namespace APSwissVisite
             this.GbNextEtape.Controls.Add(this.DtpDateDecision);
             this.GbNextEtape.Location = new System.Drawing.Point(908, 12);
             this.GbNextEtape.Name = "GbNextEtape";
-            this.GbNextEtape.Size = new System.Drawing.Size(396, 370);
+            this.GbNextEtape.Size = new System.Drawing.Size(396, 449);
             this.GbNextEtape.TabIndex = 9;
             this.GbNextEtape.TabStop = false;
             this.GbNextEtape.Text = "Prochaine étape";
             this.GbNextEtape.Visible = false;
-            // 
-            // DtpDateDecision
-            // 
-            this.DtpDateDecision.Location = new System.Drawing.Point(122, 314);
-            this.DtpDateDecision.MinDate = new System.DateTime(2021, 12, 1, 15, 31, 54, 0);
-            this.DtpDateDecision.Name = "DtpDateDecision";
-            this.DtpDateDecision.Size = new System.Drawing.Size(249, 22);
-            this.DtpDateDecision.TabIndex = 0;
-            this.DtpDateDecision.Value = new System.DateTime(2021, 12, 1, 15, 31, 54, 0);
-            // 
-            // TbNextEtapeNum
-            // 
-            this.TbNextEtapeNum.Location = new System.Drawing.Point(110, 52);
-            this.TbNextEtapeNum.Name = "TbNextEtapeNum";
-            this.TbNextEtapeNum.ReadOnly = true;
-            this.TbNextEtapeNum.Size = new System.Drawing.Size(87, 22);
-            this.TbNextEtapeNum.TabIndex = 11;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(16, 52);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(78, 20);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "Numéro :";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(21, 235);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(85, 20);
-            this.label10.TabIndex = 12;
-            this.label10.Text = "Décision :";
-            // 
-            // RbRefuse
-            // 
-            this.RbRefuse.AutoSize = true;
-            this.RbRefuse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RbRefuse.Location = new System.Drawing.Point(122, 233);
-            this.RbRefuse.Name = "RbRefuse";
-            this.RbRefuse.Size = new System.Drawing.Size(92, 24);
-            this.RbRefuse.TabIndex = 13;
-            this.RbRefuse.Text = "Refusée";
-            this.RbRefuse.UseVisualStyleBackColor = true;
-            // 
-            // RbValide
-            // 
-            this.RbValide.AutoSize = true;
-            this.RbValide.Checked = true;
-            this.RbValide.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RbValide.Location = new System.Drawing.Point(122, 269);
-            this.RbValide.Name = "RbValide";
-            this.RbValide.Size = new System.Drawing.Size(85, 24);
-            this.RbValide.TabIndex = 14;
-            this.RbValide.TabStop = true;
-            this.RbValide.Text = "Validée";
-            this.RbValide.UseVisualStyleBackColor = true;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(51, 318);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(55, 20);
-            this.label11.TabIndex = 15;
-            this.label11.Text = "Date :";
-            // 
-            // TbNextEtapeLibelle
-            // 
-            this.TbNextEtapeLibelle.Location = new System.Drawing.Point(110, 101);
-            this.TbNextEtapeLibelle.Name = "TbNextEtapeLibelle";
-            this.TbNextEtapeLibelle.ReadOnly = true;
-            this.TbNextEtapeLibelle.Size = new System.Drawing.Size(225, 22);
-            this.TbNextEtapeLibelle.TabIndex = 19;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(26, 103);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(68, 20);
-            this.label12.TabIndex = 18;
-            this.label12.Text = "Libellé :";
             // 
             // textBox1
             // 
@@ -397,6 +310,106 @@ namespace APSwissVisite
             this.label14.Size = new System.Drawing.Size(106, 20);
             this.label14.TabIndex = 20;
             this.label14.Text = "Nom norme :";
+            // 
+            // TbNextEtapeLibelle
+            // 
+            this.TbNextEtapeLibelle.Location = new System.Drawing.Point(110, 101);
+            this.TbNextEtapeLibelle.Name = "TbNextEtapeLibelle";
+            this.TbNextEtapeLibelle.ReadOnly = true;
+            this.TbNextEtapeLibelle.Size = new System.Drawing.Size(225, 22);
+            this.TbNextEtapeLibelle.TabIndex = 19;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(51, 318);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(55, 20);
+            this.label11.TabIndex = 15;
+            this.label11.Text = "Date :";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(26, 103);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(68, 20);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "Libellé :";
+            // 
+            // RbValide
+            // 
+            this.RbValide.AutoSize = true;
+            this.RbValide.Checked = true;
+            this.RbValide.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RbValide.Location = new System.Drawing.Point(122, 269);
+            this.RbValide.Name = "RbValide";
+            this.RbValide.Size = new System.Drawing.Size(85, 24);
+            this.RbValide.TabIndex = 14;
+            this.RbValide.TabStop = true;
+            this.RbValide.Text = "Validée";
+            this.RbValide.UseVisualStyleBackColor = true;
+            // 
+            // RbRefuse
+            // 
+            this.RbRefuse.AutoSize = true;
+            this.RbRefuse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RbRefuse.Location = new System.Drawing.Point(122, 233);
+            this.RbRefuse.Name = "RbRefuse";
+            this.RbRefuse.Size = new System.Drawing.Size(92, 24);
+            this.RbRefuse.TabIndex = 13;
+            this.RbRefuse.Text = "Refusée";
+            this.RbRefuse.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(21, 235);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(85, 20);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Décision :";
+            // 
+            // TbNextEtapeNum
+            // 
+            this.TbNextEtapeNum.Location = new System.Drawing.Point(110, 52);
+            this.TbNextEtapeNum.Name = "TbNextEtapeNum";
+            this.TbNextEtapeNum.ReadOnly = true;
+            this.TbNextEtapeNum.Size = new System.Drawing.Size(87, 22);
+            this.TbNextEtapeNum.TabIndex = 11;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(16, 52);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(78, 20);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "Numéro :";
+            // 
+            // DtpDateDecision
+            // 
+            this.DtpDateDecision.Location = new System.Drawing.Point(122, 314);
+            this.DtpDateDecision.MinDate = new System.DateTime(2021, 12, 1, 15, 31, 54, 0);
+            this.DtpDateDecision.Name = "DtpDateDecision";
+            this.DtpDateDecision.Size = new System.Drawing.Size(249, 22);
+            this.DtpDateDecision.TabIndex = 0;
+            this.DtpDateDecision.Value = new System.DateTime(2021, 12, 1, 15, 31, 54, 0);
+            // 
+            // BtnValider
+            // 
+            this.BtnValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnValider.Location = new System.Drawing.Point(122, 369);
+            this.BtnValider.Name = "BtnValider";
+            this.BtnValider.Size = new System.Drawing.Size(159, 51);
+            this.BtnValider.TabIndex = 24;
+            this.BtnValider.Text = "Valider";
+            this.BtnValider.UseVisualStyleBackColor = true;
+            this.BtnValider.Click += new System.EventHandler(this.BtnValider_Click);
             // 
             // FormSaisieDecisionEtape
             // 
@@ -453,5 +466,6 @@ namespace APSwissVisite
         private System.Windows.Forms.TextBox TbNextEtapeNomNorme;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button BtnValider;
     }
 }

@@ -36,7 +36,7 @@ namespace APSwissVisite
         {
             Current = Medicament.LesMedicaments[CbMedicaments.Text];
             TbNomCommercial.Text = Current.NomCommercial;
-            if (IsMedicamentValid(Current))
+            if (Current.DerniereEtape.IdDecision == 1)
             {
                 GbLastEtape.Visible = true;
                 GbNextEtape.Visible = true;
@@ -53,6 +53,11 @@ namespace APSwissVisite
                 LblMedicState.Text = "INVALIDE";
                 LblMedicState.ForeColor = Color.Red;
             }
+        }
+
+        private void BtnValider_Click(object sender, EventArgs e)
+        {
+
         }
         #endregion
     }

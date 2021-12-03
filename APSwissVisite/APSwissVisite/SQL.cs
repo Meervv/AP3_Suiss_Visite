@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Collections.Generic;
 
 namespace APSwissVisite
 {
@@ -26,11 +27,15 @@ namespace APSwissVisite
                 string contreIndic = (string)result["MED_CONTREINDIC"];
                 string codeFamille = (string)result["FAM_CODE"];
 
-                new Medicament(depotLegal, nomCommercial, composition, effets, contreIndic, codeFamille); // Ajouté direct au dico
+                new Medicament(depotLegal, nomCommercial, composition, effets, contreIndic, codeFamille);
             }
 
             Connexion.Close();
+
+            foreach (Medicament M in Medicament.LesMedicaments.Values)
+                GetMedicamentWorkflow(M); // Récupération des workflows
         }
+
         public static void FetchFamilles()
         {
             Connexion.Open();
@@ -65,7 +70,7 @@ namespace APSwissVisite
         public static void FetchEtapes()
         {
             Connexion.Open();
-            SqlCommand maRequete = new SqlCommand("prc_fetch_etapes", Connexion) { CommandType = CommandType.StoredProcedure }; 
+            SqlCommand maRequete = new SqlCommand("prc_fetch_etapes", Connexion) { CommandType = CommandType.StoredProcedure };
             SqlDataReader SqlExec = maRequete.ExecuteReader();
 
             while (SqlExec.Read())
@@ -84,20 +89,6 @@ namespace APSwissVisite
         #endregion
 
         #region Medicament Subroutines
-        public static bool IsMedicamentValid(Medicament M)
-        {
-            return true;
-            Connexion.Open();
-
-            SqlCommand command = new SqlCommand("prc_medicament_derniereEtapeValide", Connexion) { CommandType = CommandType.StoredProcedure };
-            SqlParameter param = new SqlParameter("@depotLegal", SqlDbType.VarChar, 10) { Value = M.DepotLegal };
-            command.Parameters.Add(param);
-            SqlDataReader result = command.ExecuteReader();
-            result.Read();
-            Connexion.Close();
-            return result.GetInt32(0) == 1;
-        }
-
         public static int MedicamentGetLastEtape(Medicament M)
         {
             Connexion.Open();
@@ -119,6 +110,12 @@ namespace APSwissVisite
             command.Parameters.Add(param);
             command.ExecuteNonQuery();
             Connexion.Close();
+        }
+
+        public static void MedicamentUpdateLastEtape(Medicament M, bool decision, DateTime date)
+        {
+            MedicamentIncrementLastEtape(M);
+            if (MedicamentGetLastEtape(M) == 8) FamilleIncrementCount(M.Famille.Code);
         }
 
         #endregion
@@ -143,15 +140,43 @@ namespace APSwissVisite
 
         #region Famille Subroutines
 
-        public static void IncrementFamilleCount(string codeFamille)
+        public static void FamilleIncrementCount(string codeFamille)
         {
             Connexion.Open();
             SqlCommand command = new SqlCommand("prc_famille_increment", Connexion);
             SqlParameter param = new SqlParameter("@codeFamille", SqlDbType.NVarChar, 3) { Value = codeFamille };
+            command.Parameters.Add(param);
             command.ExecuteNonQuery();
             Connexion.Close();
         }
 
+        #endregion
+
+        #region Workflow Subroutines
+        public static void GetMedicamentWorkflow(Medicament M)
+        {
+            bool shouldClose = Connexion.State == ConnectionState.Closed;
+            if (shouldClose) Connexion.Open();
+
+            List<Workflow> workflows = new List<Workflow>();
+
+            SqlCommand command = new SqlCommand("prc_getMedicamentWorkflow", Connexion) { CommandType = CommandType.StoredProcedure };
+            SqlParameter param = new SqlParameter("@depotLegal", SqlDbType.VarChar, 10) { Value = M.DepotLegal };
+            command.Parameters.Add(param);
+
+            SqlDataReader result = command.ExecuteReader();
+
+            while (result.Read())
+            {
+                DateTime dateDecision = DateTime.Parse(result["dateDecision"].ToString());
+                int numEtape = (int)result["numEtape"];
+                int idDecision = (int)result["idDecision"];
+                workflows.Add(new Workflow(M.DepotLegal, dateDecision, numEtape, idDecision));
+            }
+
+            M.LesEtapes = workflows;
+            if (shouldClose) Connexion.Close();
+        }
         #endregion
     }
 }

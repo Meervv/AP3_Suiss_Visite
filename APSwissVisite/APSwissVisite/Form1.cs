@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 using static APSwissVisite.SQL;
 
 namespace APSwissVisite
@@ -19,9 +18,6 @@ namespace APSwissVisite
             FetchDecisions();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            new FormSaisieDecisionEtape().Show();
-        }
+        private void button1_Click(object sender, EventArgs e) => new FormSaisieDecisionEtape().Show();
     }
 }

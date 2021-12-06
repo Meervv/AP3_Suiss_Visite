@@ -53,7 +53,6 @@ namespace APSwissVisite
             maRequete.Parameters.Add(paramNorme);
             maRequete.Parameters.Add(paramDate);
             maRequete.Parameters.Add(paramId);
-
             maRequete.ExecuteNonQuery();
 
             Connexion.Close();

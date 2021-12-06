@@ -26,11 +26,6 @@ namespace APSwissVisite
         {
             
         }
-
-        public void addInHistorique()
-        {
-
-        }
         private void btModif_Click(object sender, EventArgs e)
         {
             const string message = "Voulez-vous vraiment modifier l'étape normée ?";
@@ -44,7 +39,6 @@ namespace APSwissVisite
             else
             {
                 updateEtape(tbNorme.Text, DateTime.Parse(tbDate.Text), index);
-                addInHistorique();
                 this.Close();
             }
         }

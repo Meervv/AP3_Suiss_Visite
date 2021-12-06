@@ -57,5 +57,29 @@ namespace APSwissVisite
 
             Connexion.Close();
         }
+
+        public static void afficherFamille()
+        {
+            Connexion.Open();
+
+            SqlCommand maRequete = new SqlCommand("prc_afficherFamille", Connexion);
+            maRequete.CommandType = CommandType.StoredProcedure;
+
+            // exécuter la procedure stockée dans un curseur 
+            SqlDataReader SqlExec = maRequete.ExecuteReader();
+
+            //boucle de lecture des Famille avec ajout dans la collection
+            while (SqlExec.Read())
+            {
+                string codeFamille = SqlExec["FAM_CODE"].ToString();
+                string libelleFamille = SqlExec["FAM_LIBELLE"].ToString();
+                int nbMedicAmm = int.Parse(SqlExec["FAM_NBMEDIC"].ToString());
+
+                Famille laFamille = new Famille(codeFamille, libelleFamille, nbMedicAmm);
+
+                Globale.lesFamilles.Add(codeFamille, laFamille);
+            }
+            Connexion.Close();
+        }
     }
 }

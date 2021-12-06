@@ -20,3 +20,4 @@ E:\BTS 2\Semestre 1\AP\AP3\github\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\o
 E:\BTS 2\Semestre 1\AP\AP3\github\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.pdb
 E:\BTS 2\Semestre 1\AP\AP3\github\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.frm_etapes_normees.resources
 E:\BTS 2\Semestre 1\AP\AP3\github\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.frm_modifEtape.resources
+E:\BTS 2\Semestre 1\AP\AP3\github\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.frm_consultation_medicament.resources

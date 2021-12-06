@@ -57,6 +57,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_consultation_medicament.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_consultation_medicament.Designer.cs">
+      <DependentUpon>frm_consultation_medicament.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_etapes_normees.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     <Compile Include="Workflow.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_consultation_medicament.resx">
+      <DependentUpon>frm_consultation_medicament.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_etapes_normees.resx">
       <DependentUpon>frm_etapes_normees.cs</DependentUpon>

@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>APSwissVisite</RootNamespace>
     <AssemblyName>APSwissVisite</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -56,13 +57,32 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_etapes_normees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_etapes_normees.Designer.cs">
+      <DependentUpon>frm_etapes_normees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Globale.cs" />
     <Compile Include="Medicament.cs" />
+    <Compile Include="frm_modifEtape.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_modifEtape.Designer.cs">
+      <DependentUpon>frm_modifEtape.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQL.cs" />
     <Compile Include="Workflow.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_etapes_normees.resx">
+      <DependentUpon>frm_etapes_normees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_modifEtape.resx">
+      <DependentUpon>frm_modifEtape.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -72,6 +92,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

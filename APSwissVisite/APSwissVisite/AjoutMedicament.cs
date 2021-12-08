@@ -61,6 +61,24 @@ namespace APSwissVisite
 
         private void cbAjout_Click(object sender, EventArgs e)
         {
+            int idx = 0;
+            Boolean trouve = false;
+            while (idx < Medicament.LesMedicaments.Count && !trouve)
+            {
+                Medicament M = Medicament.LesMedicaments.Values.ElementAt(idx);
+                if (M.DepotLegal == tbDepotLegal.Text)
+                {
+                    trouve = true;
+                }
+                else
+                    idx++;
+            }
+            if (trouve)
+            {
+               MessageBox.Show("il ne peut pas y avoir 2 fois le même depot legal");
+                return;
+            }
+
             SQL.AjoutMedicament(tbDepotLegal.Text, tbNomCommercial.Text, cbCodeFamille.Text, float.Parse(tbPrixEchantillon.Text), rtbCompoMed.Text, rtbEffetMed.Text, rtbContreIndic.Text);
             MessageBox.Show("le medicament à été ajouter");
         }

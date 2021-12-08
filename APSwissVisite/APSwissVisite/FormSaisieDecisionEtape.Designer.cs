@@ -48,6 +48,7 @@ namespace APSwissVisite
             this.TbLastEtapeNum = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.GbNextEtape = new System.Windows.Forms.GroupBox();
+            this.BtnValider = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.TbNextEtapeNomNorme = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -61,7 +62,6 @@ namespace APSwissVisite
             this.TbNextEtapeNum = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.DtpDateDecision = new System.Windows.Forms.DateTimePicker();
-            this.BtnValider = new System.Windows.Forms.Button();
             this.GbMedic.SuspendLayout();
             this.GbLastEtape.SuspendLayout();
             this.GbNextEtape.SuspendLayout();
@@ -127,7 +127,7 @@ namespace APSwissVisite
             this.GbMedic.Controls.Add(this.label2);
             this.GbMedic.Location = new System.Drawing.Point(12, 12);
             this.GbMedic.Name = "GbMedic";
-            this.GbMedic.Size = new System.Drawing.Size(844, 189);
+            this.GbMedic.Size = new System.Drawing.Size(924, 189);
             this.GbMedic.TabIndex = 7;
             this.GbMedic.TabStop = false;
             this.GbMedic.Text = "Médicament";
@@ -155,7 +155,7 @@ namespace APSwissVisite
             this.GbLastEtape.Controls.Add(this.label4);
             this.GbLastEtape.Location = new System.Drawing.Point(12, 229);
             this.GbLastEtape.Name = "GbLastEtape";
-            this.GbLastEtape.Size = new System.Drawing.Size(844, 153);
+            this.GbLastEtape.Size = new System.Drawing.Size(924, 153);
             this.GbLastEtape.TabIndex = 8;
             this.GbLastEtape.TabStop = false;
             this.GbLastEtape.Text = "Dernière étape";
@@ -163,25 +163,25 @@ namespace APSwissVisite
             // 
             // TbLastEtapeNormeDate
             // 
-            this.TbLastEtapeNormeDate.Location = new System.Drawing.Point(618, 99);
+            this.TbLastEtapeNormeDate.Location = new System.Drawing.Point(702, 97);
             this.TbLastEtapeNormeDate.Name = "TbLastEtapeNormeDate";
             this.TbLastEtapeNormeDate.ReadOnly = true;
-            this.TbLastEtapeNormeDate.Size = new System.Drawing.Size(137, 22);
+            this.TbLastEtapeNormeDate.Size = new System.Drawing.Size(171, 22);
             this.TbLastEtapeNormeDate.TabIndex = 17;
             // 
             // TbLastEtapeNomNorme
             // 
-            this.TbLastEtapeNomNorme.Location = new System.Drawing.Point(618, 44);
+            this.TbLastEtapeNomNorme.Location = new System.Drawing.Point(702, 42);
             this.TbLastEtapeNomNorme.Name = "TbLastEtapeNomNorme";
             this.TbLastEtapeNomNorme.ReadOnly = true;
-            this.TbLastEtapeNomNorme.Size = new System.Drawing.Size(137, 22);
+            this.TbLastEtapeNomNorme.Size = new System.Drawing.Size(171, 22);
             this.TbLastEtapeNomNorme.TabIndex = 16;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(478, 99);
+            this.label8.Location = new System.Drawing.Point(562, 97);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(107, 20);
             this.label8.TabIndex = 15;
@@ -191,7 +191,7 @@ namespace APSwissVisite
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(478, 44);
+            this.label7.Location = new System.Drawing.Point(562, 42);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(106, 20);
             this.label7.TabIndex = 14;
@@ -199,7 +199,7 @@ namespace APSwissVisite
             // 
             // TbLastEtapeLibelle
             // 
-            this.TbLastEtapeLibelle.Location = new System.Drawing.Point(224, 99);
+            this.TbLastEtapeLibelle.Location = new System.Drawing.Point(308, 97);
             this.TbLastEtapeLibelle.Name = "TbLastEtapeLibelle";
             this.TbLastEtapeLibelle.ReadOnly = true;
             this.TbLastEtapeLibelle.Size = new System.Drawing.Size(225, 22);
@@ -209,7 +209,7 @@ namespace APSwissVisite
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(295, 44);
+            this.label6.Location = new System.Drawing.Point(379, 42);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 20);
             this.label6.TabIndex = 12;
@@ -217,17 +217,17 @@ namespace APSwissVisite
             // 
             // TbLastEtapeDate
             // 
-            this.TbLastEtapeDate.Location = new System.Drawing.Point(118, 99);
+            this.TbLastEtapeDate.Location = new System.Drawing.Point(105, 97);
             this.TbLastEtapeDate.Name = "TbLastEtapeDate";
             this.TbLastEtapeDate.ReadOnly = true;
-            this.TbLastEtapeDate.Size = new System.Drawing.Size(87, 22);
+            this.TbLastEtapeDate.Size = new System.Drawing.Size(164, 22);
             this.TbLastEtapeDate.TabIndex = 11;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(24, 99);
+            this.label5.Location = new System.Drawing.Point(11, 97);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 20);
             this.label5.TabIndex = 10;
@@ -235,7 +235,7 @@ namespace APSwissVisite
             // 
             // TbLastEtapeNum
             // 
-            this.TbLastEtapeNum.Location = new System.Drawing.Point(118, 42);
+            this.TbLastEtapeNum.Location = new System.Drawing.Point(105, 40);
             this.TbLastEtapeNum.Name = "TbLastEtapeNum";
             this.TbLastEtapeNum.ReadOnly = true;
             this.TbLastEtapeNum.Size = new System.Drawing.Size(87, 22);
@@ -245,7 +245,7 @@ namespace APSwissVisite
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(24, 42);
+            this.label4.Location = new System.Drawing.Point(11, 40);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 20);
             this.label4.TabIndex = 8;
@@ -267,13 +267,24 @@ namespace APSwissVisite
             this.GbNextEtape.Controls.Add(this.TbNextEtapeNum);
             this.GbNextEtape.Controls.Add(this.label9);
             this.GbNextEtape.Controls.Add(this.DtpDateDecision);
-            this.GbNextEtape.Location = new System.Drawing.Point(908, 12);
+            this.GbNextEtape.Location = new System.Drawing.Point(1031, 12);
             this.GbNextEtape.Name = "GbNextEtape";
             this.GbNextEtape.Size = new System.Drawing.Size(396, 449);
             this.GbNextEtape.TabIndex = 9;
             this.GbNextEtape.TabStop = false;
             this.GbNextEtape.Text = "Prochaine étape";
             this.GbNextEtape.Visible = false;
+            // 
+            // BtnValider
+            // 
+            this.BtnValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnValider.Location = new System.Drawing.Point(122, 369);
+            this.BtnValider.Name = "BtnValider";
+            this.BtnValider.Size = new System.Drawing.Size(159, 51);
+            this.BtnValider.TabIndex = 24;
+            this.BtnValider.Text = "Valider";
+            this.BtnValider.UseVisualStyleBackColor = true;
+            this.BtnValider.Click += new System.EventHandler(this.BtnValider_Click);
             // 
             // textBox1
             // 
@@ -400,22 +411,11 @@ namespace APSwissVisite
             this.DtpDateDecision.TabIndex = 0;
             this.DtpDateDecision.Value = new System.DateTime(2021, 12, 1, 15, 31, 54, 0);
             // 
-            // BtnValider
-            // 
-            this.BtnValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnValider.Location = new System.Drawing.Point(122, 369);
-            this.BtnValider.Name = "BtnValider";
-            this.BtnValider.Size = new System.Drawing.Size(159, 51);
-            this.BtnValider.TabIndex = 24;
-            this.BtnValider.Text = "Valider";
-            this.BtnValider.UseVisualStyleBackColor = true;
-            this.BtnValider.Click += new System.EventHandler(this.BtnValider_Click);
-            // 
             // FormSaisieDecisionEtape
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1338, 473);
+            this.ClientSize = new System.Drawing.Size(1458, 473);
             this.Controls.Add(this.GbNextEtape);
             this.Controls.Add(this.GbLastEtape);
             this.Controls.Add(this.GbMedic);

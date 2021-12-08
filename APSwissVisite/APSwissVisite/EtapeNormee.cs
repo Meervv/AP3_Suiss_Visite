@@ -12,9 +12,6 @@ namespace APSwissVisite
         public DateTime Date;
 
         public EtapeNormee(int num, string libelle, string norme, DateTime date) : base(num, libelle)
-        {
-            (Norme, Date) = (norme, date);
-            LesEtapes.Add(this);
-        }
+            => (Norme, Date) = (norme, date);
     }
 }

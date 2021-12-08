@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Text;
 using static APSwissVisite.SQL;
 
 namespace APSwissVisite
@@ -16,6 +17,7 @@ namespace APSwissVisite
             FetchFamilles();
             FetchMedicaments();
             FetchDecisions();
+            FetchEtapes();
         }
 
         private void button1_Click(object sender, EventArgs e) => new FormSaisieDecisionEtape().Show();

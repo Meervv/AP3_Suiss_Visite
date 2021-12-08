@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace APSwissVisite
 {
@@ -14,6 +15,7 @@ namespace APSwissVisite
         #region Fetch Subroutines
         public static void FetchMedicaments()
         {
+            Medicament.LesMedicaments.Clear();
             Connexion.Open();
             SqlCommand command = new SqlCommand("prc_fetch_medicaments", Connexion) { CommandType = CommandType.StoredProcedure };
             SqlDataReader result = command.ExecuteReader();
@@ -38,6 +40,7 @@ namespace APSwissVisite
 
         public static void FetchFamilles()
         {
+            Famille.LesFamilles.Clear();
             Connexion.Open();
             SqlCommand command = new SqlCommand("prc_fetch_familles", Connexion) { CommandType = CommandType.StoredProcedure };
             SqlDataReader result = command.ExecuteReader();
@@ -67,21 +70,30 @@ namespace APSwissVisite
             }
             Connexion.Close();
         }
+
         public static void FetchEtapes()
         {
             Connexion.Open();
-            SqlCommand maRequete = new SqlCommand("prc_fetch_etapes", Connexion) { CommandType = CommandType.StoredProcedure };
-            SqlDataReader SqlExec = maRequete.ExecuteReader();
+            SqlCommand command = new SqlCommand("prc_fetch_etapes", Connexion) { CommandType = CommandType.StoredProcedure };
+            SqlDataReader result = command.ExecuteReader();
 
-            while (SqlExec.Read())
+            while (result.Read())
             {
-                int numEtape = (int)SqlExec["num"];
-                string libelleEtape = (string)SqlExec["libelle"];
-                string norme = (string)SqlExec["norme"];
-                DateTime dateNorme = DateTime.Parse(SqlExec["dateNorme"].ToString());
-
-                new Etape(numEtape, libelleEtape);
-                new EtapeNormee(numEtape, libelleEtape, norme, dateNorme);
+                int numEtape = (int)result["num"];
+                //MessageBox.Show($"Log {numEtape}");
+                string libelleEtape = (string)result["libelle"];
+                if (result["norme"].GetType() == typeof(DBNull))
+                {
+                    new Etape(numEtape, libelleEtape);
+                    //MessageBox.Show($"Non normée : {numEtape}");
+                }
+                else
+                {
+                    string norme = (string)result["norme"];
+                    DateTime dateNorme = DateTime.Parse(result["dateNorme"].ToString());
+                    new EtapeNormee(numEtape, libelleEtape, norme, dateNorme);
+                    //MessageBox.Show($"Normée : {numEtape} ; {norme}");
+                }
             }
             Connexion.Close();
         }
@@ -106,16 +118,44 @@ namespace APSwissVisite
         {
             Connexion.Open();
             SqlCommand command = new SqlCommand("prc_medicament_incrementLastEtape", Connexion) { CommandType = CommandType.StoredProcedure };
-            SqlParameter param = new SqlParameter("@depotLegal", SqlDbType.VarChar, 10) { Value = M.DepotLegal };
-            command.Parameters.Add(param);
+            command.Parameters.Add(new SqlParameter("@depotLegal", SqlDbType.VarChar, 10) { Value = M.DepotLegal });
             command.ExecuteNonQuery();
             Connexion.Close();
         }
 
         public static void MedicamentUpdateLastEtape(Medicament M, bool decision, DateTime date)
         {
+            Connexion.Open();
+
+            SqlCommand command = new SqlCommand("prc_updateLastEtape", Connexion) { CommandType = CommandType.StoredProcedure };
+            SqlParameter param1 = new SqlParameter("@depotLegal", SqlDbType.VarChar, 10) { Value = M.DepotLegal };
+            SqlParameter param2 = new SqlParameter("@decision", SqlDbType.Int) { Value = decision };
+            SqlParameter param3 = new SqlParameter("@date", SqlDbType.DateTime) { Value = date };
+            SqlParameter param4 = new SqlParameter("@numEtape", SqlDbType.Int) { Value = M.LesEtapes.Count + 1 };
+            command.Parameters.AddRange(new SqlParameter[] { param1, param2, param3, param4 });
+            command.ExecuteNonQuery();
+            Connexion.Close();
+
             MedicamentIncrementLastEtape(M);
+            GetMedicamentWorkflow(M);
             if (MedicamentGetLastEtape(M) == 8) FamilleIncrementCount(M.Famille.Code);
+
+            Medicament.LesMedicaments[M.DepotLegal] = MedicamentGetByDepotLegal(M.DepotLegal);
+        }
+
+        public static Medicament MedicamentGetByDepotLegal(string depotLegal)
+        {
+            Connexion.Open();
+
+            SqlCommand command = new SqlCommand("prc_getMedicamentByDebot", Connexion) { CommandType = CommandType.StoredProcedure };
+            command.Parameters.Add(new SqlParameter("@depotLegal", SqlDbType.VarChar, 10) { Value = depotLegal });
+            SqlDataReader result = command.ExecuteReader();
+            if (!result.HasRows) return null;
+            result.Read();
+            Medicament M = new Medicament(depotLegal, result.GetString(1), result.GetString(3), result.GetString(4), result.GetString(5), result.GetString(2), false);
+            Connexion.Close();
+            GetMedicamentWorkflow(M);
+            return M;
         }
 
         #endregion
@@ -144,8 +184,7 @@ namespace APSwissVisite
         {
             Connexion.Open();
             SqlCommand command = new SqlCommand("prc_famille_increment", Connexion);
-            SqlParameter param = new SqlParameter("@codeFamille", SqlDbType.NVarChar, 3) { Value = codeFamille };
-            command.Parameters.Add(param);
+            command.Parameters.Add(new SqlParameter("@codeFamille", SqlDbType.NVarChar, 3) { Value = codeFamille });
             command.ExecuteNonQuery();
             Connexion.Close();
         }

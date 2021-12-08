@@ -16,12 +16,12 @@ namespace APSwissVisite
 
         public Workflow DerniereEtape => LesEtapes[LesEtapes.Count - 1];
 
-        public Medicament(string depotLegal, string nomCommercial, string composition, string effets, string contreIndications, string codeFamille)
+        public Medicament(string depotLegal, string nomCommercial, string composition, string effets, string contreIndications, string codeFamille, bool toList = true)
         {
             (DepotLegal, NomCommercial, Composition, Effets, ContreIndications) =
                 (depotLegal, nomCommercial, composition, effets, contreIndications);
             Famille = Famille.LesFamilles[codeFamille];
-            LesMedicaments.Add(depotLegal, this);
+            if (toList) LesMedicaments.Add(depotLegal, this);
         }
     }
 }

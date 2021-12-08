@@ -18,19 +18,29 @@ namespace APSwissVisite
 
         private void UpdatelastEtape()
         {
-            Etape lastEtape = GetEtapeByID(MedicamentGetLastEtape(Current));
+            Etape lastEtape = Etape.LesEtapes[Current.DerniereEtape.NumEtape];
+            if (lastEtape.GetType() == typeof(EtapeNormee))
+            {
+                EtapeNormee etapeNorme = (EtapeNormee)lastEtape;
+                TbLastEtapeNomNorme.Text = etapeNorme.Norme;
+                TbLastEtapeNormeDate.Text = etapeNorme.Date.Date.ToString();
+            }
             TbLastEtapeNum.Text = lastEtape.Num.ToString();
             TbLastEtapeLibelle.Text = lastEtape.Libelle;
+            TbLastEtapeDate.Text = Current.DerniereEtape.DateDecision.Date.ToString();
+        }
+
+        private void UpdateCB()
+        {
+            CbMedicaments.Items.Clear();
+            foreach (Medicament M in Medicament.LesMedicaments.Values)
+                CbMedicaments.Items.Add(M.DepotLegal);
         }
 
         #endregion
 
         #region Form Subroutines
-        private void FormSaisieDecisionEtape_Load(object sender, EventArgs e)
-        {
-            foreach (Medicament M in Medicament.LesMedicaments.Values)
-                CbMedicaments.Items.Add(M.DepotLegal);
-        }
+        private void FormSaisieDecisionEtape_Load(object sender, EventArgs e) => UpdateCB();
 
         private void CbMedicaments_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -57,7 +67,8 @@ namespace APSwissVisite
 
         private void BtnValider_Click(object sender, EventArgs e)
         {
-
+            MedicamentUpdateLastEtape(Current, RbValide.Checked, DtpDateDecision.Value);
+            UpdateCB();
         }
         #endregion
     }

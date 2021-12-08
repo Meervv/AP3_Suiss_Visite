@@ -15,7 +15,8 @@ namespace APSwissVisite
         private string contreIndication;
         private string amm;
         private int derniereEtape;
-        private string codeFamille;
+        public Famille laFamille;
+        //private Dictionary<string, Famille> laFamille;
 
         public Medicament(string leDepot, string leNom, string laCompo, string lesEffets, string contreIndi, string leAmm, int last, string code)
         {
@@ -26,17 +27,17 @@ namespace APSwissVisite
             this.contreIndication = contreIndi;
             this.amm = leAmm;
             this.derniereEtape = last;
-            this.codeFamille = code;
+            this.laFamille = Globale.lesFamilles[code];
         }
 
         public string getDepotLegale() { return this.depotLegale; }
         public string getNom() { return this.nomCommercial; }
         public string getCompo() { return this.composition; }
+        
+        public Famille getLaFamille() { return this.laFamille; }
         public string getEffets() { return this.effets; }
         public string getContreIndic() { return this.contreIndication; }
         public string getAmm() { return this.amm; }
         public int getDerniereEtape() { return this.derniereEtape; }
-        public string getCode() { return this.codeFamille; }
-
     }
 }

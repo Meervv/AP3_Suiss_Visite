@@ -18,8 +18,6 @@ namespace APSwissVisite
         }
         private void chargerListe()
         {
-//            lvEtapeNormee.Items.Clear();
-
             foreach (Etape lEtape in Globale.lesEtapes)
             {
                 if (lEtape.GetType() == typeof(EtapeNormee)) //check le type de la class

@@ -21,6 +21,7 @@ namespace APSwissVisite
         {
             lvListeNombre.Items.Clear();
             SQL.afficherFamille();
+            afficherListe();
         }
 
         public void afficherListe()
@@ -38,6 +39,37 @@ namespace APSwissVisite
 
                 lvListeNombre.Items.Add(ligne);
             }
+        }
+
+        private void lvListeNombre_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lvMedicaments.Items.Clear();
+            if (lvListeNombre.SelectedIndices.Count <= 0)
+                return;
+            int idx = lvListeNombre.SelectedIndices[0];
+            if (idx >= 0)
+            {
+                foreach (Medicament leMedicament in SQL.afficherMedicaments(lvListeNombre.Items[idx].SubItems[0].Text))
+                {
+                    if (lvListeNombre.Items[idx].SubItems[0].Text == leMedicament.getLaFamille().getCode())
+                    {
+                        ListViewItem ligne = new ListViewItem();
+
+                        ligne.Text = leMedicament.getDepotLegale();
+                        ligne.SubItems.Add(leMedicament.getNom());
+                        ligne.SubItems.Add(leMedicament.getCompo());
+                        ligne.SubItems.Add(leMedicament.getEffets());
+                        ligne.SubItems.Add(leMedicament.getContreIndic());
+                        ligne.SubItems.Add(leMedicament.getLaFamille().getCode());
+                        lvMedicaments.Items.Add(ligne);
+                    }
+                }
+            }
+        }
+
+        private void lvMedicaments_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

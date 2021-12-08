@@ -15,7 +15,7 @@ namespace APSwissVisite
         
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            lireLesEtapes();
         }
 
         private void listeToolStripMenuItem_Click(object sender, EventArgs e)

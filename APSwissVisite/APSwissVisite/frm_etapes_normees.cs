@@ -35,8 +35,8 @@ namespace APSwissVisite
         private void frm_etapes_normees_Load(object sender, EventArgs e)
         {
             lvEtapeNormee.Items.Clear();
-            SQL.lireLesEtapes();
             chargerListe();
+            SQL.lireLesEtapes();
         }
 
         private void lvEtapeNormee_SelectedIndexChanged(object sender, EventArgs e)

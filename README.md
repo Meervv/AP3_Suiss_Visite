@@ -32,7 +32,7 @@ Nous avions également plusieurs contraintes à respecter :
 
 **Client:** .NET Windows Forms
 
-**Server:** MysqlServer
+**Server:** SQLServer
 
 
 ## Installation

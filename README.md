@@ -21,14 +21,14 @@ Nous avions également plusieurs contraintes à respecter :
 
 
 
-## Authors
+## Auteurs
 
 - [@Meervv](https://github.com/Meervv)
 - [@YohannDR](https://github.com/YohannDR)
 - [@TristanCarnesciali](https://github.com/TristanCarnesciali)
 
 
-## Tech Stack
+## Languages
 
 **Client:** .NET Windows Forms
 

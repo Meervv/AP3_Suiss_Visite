@@ -89,7 +89,6 @@ namespace APSwissVisite
 
             SqlCommand maRequete = new SqlCommand("prc_afficherMedicament", Connexion);
             maRequete.CommandType = CommandType.StoredProcedure;
-            
 
             SqlParameter paramNum = new SqlParameter("@codeFamille", SqlDbType.VarChar, 3) { Value = code };
 

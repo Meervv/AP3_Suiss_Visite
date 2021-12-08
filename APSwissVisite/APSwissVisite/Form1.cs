@@ -15,7 +15,7 @@ namespace APSwissVisite
         
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            lireLesEtapes();
         }
 
         private void listeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -29,6 +29,14 @@ namespace APSwissVisite
         private void listeÉtapesNorméesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void consultationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_consultation_medicament newFrm = new frm_consultation_medicament();
+            newFrm.MdiParent = this;
+            WindowState = FormWindowState.Maximized;
+            newFrm.Show();
         }
     }
 }

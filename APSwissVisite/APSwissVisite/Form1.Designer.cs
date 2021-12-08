@@ -34,6 +34,8 @@ namespace APSwissVisite
             this.listeÉtapesNorméesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.médicamentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,7 +43,8 @@ namespace APSwissVisite
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listeÉtapesNorméesToolStripMenuItem});
+            this.listeÉtapesNorméesToolStripMenuItem,
+            this.médicamentsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -60,7 +63,7 @@ namespace APSwissVisite
             // listeToolStripMenuItem
             // 
             this.listeToolStripMenuItem.Name = "listeToolStripMenuItem";
-            this.listeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.listeToolStripMenuItem.Size = new System.Drawing.Size(122, 26);
             this.listeToolStripMenuItem.Text = "Liste";
             this.listeToolStripMenuItem.Click += new System.EventHandler(this.listeToolStripMenuItem_Click);
             // 
@@ -69,6 +72,21 @@ namespace APSwissVisite
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // médicamentsToolStripMenuItem
+            // 
+            this.médicamentsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.consultationToolStripMenuItem});
+            this.médicamentsToolStripMenuItem.Name = "médicamentsToolStripMenuItem";
+            this.médicamentsToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
+            this.médicamentsToolStripMenuItem.Text = "Médicaments";
+            // 
+            // consultationToolStripMenuItem
+            // 
+            this.consultationToolStripMenuItem.Name = "consultationToolStripMenuItem";
+            this.consultationToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.consultationToolStripMenuItem.Text = "Consultation";
+            this.consultationToolStripMenuItem.Click += new System.EventHandler(this.consultationToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -94,6 +112,8 @@ namespace APSwissVisite
         private System.Windows.Forms.ToolStripMenuItem listeÉtapesNorméesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listeToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem médicamentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultationToolStripMenuItem;
     }
 }
 

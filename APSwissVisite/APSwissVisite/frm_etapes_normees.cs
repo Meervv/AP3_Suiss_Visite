@@ -51,7 +51,8 @@ namespace APSwissVisite
             {
                 string norm = lvEtapeNormee.Items[idx].SubItems[2].Text;
                 string date = lvEtapeNormee.Items[idx].SubItems[3].Text;
-                frm_modifEtape newFrm = new frm_modifEtape(idx, norm, date);
+                int index = int.Parse(lvEtapeNormee.Items[idx].SubItems[0].Text);
+                frm_modifEtape newFrm = new frm_modifEtape(index, norm, date);
                 newFrm.TopMost = true;
                 newFrm.Show();
             }

@@ -10,17 +10,15 @@ namespace APSwissVisite
     {
         private int num;
         private string libelle;
-        private List<EtapeNormee> lesEtapesNormees;
 
         public Etape(int num, string libelle)
         {
             this.num = num;
             this.libelle = libelle;
-            this.lesEtapesNormees = new List<EtapeNormee>();
+            Globale.lesEtapes.Add(this);
         }
 
         public int getNum() { return this.num; }
         public string getLibelle() { return this.libelle; }
-        public List<EtapeNormee> getLesEtapesNormees() { return this.lesEtapesNormees; }
     }
 }

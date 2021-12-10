@@ -30,7 +30,7 @@ namespace APSwissVisite
         {
             const string message = "Voulez-vous vraiment modifier l'étape normée ?";
 
-            var result = MessageBox.Show(message, "Fermeture de la forme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show(message, "Fermeture de la forme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.No)
             {
@@ -38,6 +38,7 @@ namespace APSwissVisite
             }
             else
             {
+                MessageBox.Show(this.index.ToString());
                 updateEtape(tbNorme.Text, DateTime.Parse(tbDate.Text), index);
                 this.Close();
             }

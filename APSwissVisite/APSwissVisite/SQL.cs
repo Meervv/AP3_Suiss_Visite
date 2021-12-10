@@ -2,6 +2,7 @@
 using System;
 using System.Data;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace APSwissVisite
 {
@@ -11,37 +12,37 @@ namespace APSwissVisite
         private const string ConnexionString = @"Data Source=BTS2020-17\SQLEXPRESS;Initial Catalog=GSB_gesAMM;Integrated Security=True";
         internal static SqlConnection Connexion = new SqlConnection(ConnexionString);
 
-        //
+        //afficher les étapes dans la listView
         public static void lireLesEtapes()
         {
-            //Globale.lesEtapes.Clear();
-
             Connexion.Open();
-            //objet SQLCommand pour définir la procédure stockée à utiliser
+            //instruction Transac-SQL / procédure exécuté avec la BDD SQLServer
             SqlCommand maRequete = new SqlCommand("prc_listeToutesEtapes", Connexion);
+
+            //Obtient la valeur de la procédure stockée
             maRequete.CommandType = System.Data.CommandType.StoredProcedure;
 
-            // exécuter la procedure stockée dans un curseur 
+            //fournit un moyen de lire les lignes de la table 
             SqlDataReader SqlExec = maRequete.ExecuteReader();
 
-            //boucle de lecture des clients avec ajout dans la collection
+            //boucle de lecture des normes avec ajout dans la liste des étapes
             while (SqlExec.Read())
             {
                 int numEtape = int.Parse(SqlExec["num"].ToString());
                 string libelleEtape = SqlExec["libelle"].ToString();
-                string norme = SqlExec["norme"].ToString();
-                DateTime dateNorme = DateTime.Parse(SqlExec["dateNorme"].ToString());
-
-                Etape lEtape = new Etape(numEtape, libelleEtape);
-                EtapeNormee lEtapeNormee = new EtapeNormee(numEtape, libelleEtape, norme, dateNorme);
-
-                Globale.lesEtapes.Add(lEtape);
-                Globale.lesEtapes.Add(lEtapeNormee);
-                //Globale.lesEtapesNormee.Add(lEtapeNormee);
+                if (SqlExec["norme"].GetType() == typeof(DBNull))
+                    new Etape(numEtape, libelleEtape);
+                else
+                {
+                    string norme = (string)SqlExec["norme"];
+                    DateTime dateNorme = DateTime.Parse(SqlExec["dateNorme"].ToString());
+                    new EtapeNormee(numEtape, libelleEtape, norme, dateNorme);
+                }
             }
             Connexion.Close();
         }
 
+        //modifier la ligne modifiée et inséré dans la table Historique
         public static void updateEtape(string norme, DateTime date, int id)
         {
             Connexion.Open();
@@ -49,7 +50,7 @@ namespace APSwissVisite
 
             SqlParameter paramNorme = new SqlParameter("@norme", SqlDbType.VarChar, 100) { Value = norme };
             SqlParameter paramDate = new SqlParameter("@date", SqlDbType.DateTime) { Value = date };
-            SqlParameter paramId = new SqlParameter("@id", SqlDbType.Int, 5) { Value = id };
+            SqlParameter paramId = new SqlParameter("@id", SqlDbType.Int, 2) { Value = id };
 
             maRequete.Parameters.Add(paramNorme);
             maRequete.Parameters.Add(paramDate);
@@ -59,6 +60,7 @@ namespace APSwissVisite
             Connexion.Close();
         }
 
+        //permet afficher la liste des familles dans la listView
         public static void afficherFamille()
         {
             Connexion.Open();
@@ -66,10 +68,9 @@ namespace APSwissVisite
             SqlCommand maRequete = new SqlCommand("prc_afficherFamille", Connexion);
             maRequete.CommandType = CommandType.StoredProcedure;
 
-            // exécuter la procedure stockée dans un curseur 
             SqlDataReader SqlExec = maRequete.ExecuteReader();
 
-            //boucle de lecture des Famille avec ajout dans la collection
+            //boucle de lecture des Famille avec ajout dans le dictionnaire
             while (SqlExec.Read())
             {
                 string codeFamille = SqlExec["FAM_CODE"].ToString();
@@ -83,11 +84,13 @@ namespace APSwissVisite
             Connexion.Close();
         }
 
+        //afficher les médicaments avec comme paramètre le codeFamille
         public static List<Medicament> afficherMedicaments(string code)
         {
             Connexion.Open();
 
             SqlCommand maRequete = new SqlCommand("prc_afficherMedicament", Connexion);
+
             maRequete.CommandType = CommandType.StoredProcedure;
 
             SqlParameter paramNum = new SqlParameter("@codeFamille", SqlDbType.VarChar, 3) { Value = code };

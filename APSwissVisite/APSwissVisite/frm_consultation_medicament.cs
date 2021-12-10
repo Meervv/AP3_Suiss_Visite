@@ -20,7 +20,7 @@ namespace APSwissVisite
         private void frm_consultation_medicament_Load(object sender, EventArgs e)
         {
             lvListeNombre.Items.Clear();
-            SQL.afficherFamille();
+            SQL.afficherFamille(); //rechercher la fonction SQL
             afficherListe();
         }
 

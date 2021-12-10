@@ -16,7 +16,7 @@ namespace APSwissVisite
         private string amm;
         private int derniereEtape;
         public Famille laFamille;
-        //private Dictionary<string, Famille> laFamille;
+        public List<Workflow> LesEtapes;
 
         public Medicament(string leDepot, string leNom, string laCompo, string lesEffets, string contreIndi, string leAmm, int last, string code)
         {
@@ -28,6 +28,7 @@ namespace APSwissVisite
             this.amm = leAmm;
             this.derniereEtape = last;
             this.laFamille = Globale.lesFamilles[code];
+            Globale.lesMedicaments.Add(leDepot, this);
         }
 
         public string getDepotLegale() { return this.depotLegale; }
@@ -39,5 +40,7 @@ namespace APSwissVisite
         public string getContreIndic() { return this.contreIndication; }
         public string getAmm() { return this.amm; }
         public int getDerniereEtape() { return this.derniereEtape; }
+
+        public List<Workflow> GetWorkflows() { return this.LesEtapes; }
     }
 }

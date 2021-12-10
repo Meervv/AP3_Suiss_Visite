@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace APSwissVisite
 {
-    public static class SQL
+    public static class SQL_marvine
     {
         // Propriété Data Source à changer /!\
         private const string ConnexionString = @"Data Source=BTS2020-17\SQLEXPRESS;Initial Catalog=GSB_gesAMM;Integrated Security=True";

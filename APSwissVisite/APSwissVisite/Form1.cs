@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using static APSwissVisite.SQL;
+using static APSwissVisite.SQL_tristan;
+using static APSwissVisite.SQL_marvine;
 
 namespace APSwissVisite
 {
@@ -15,6 +16,10 @@ namespace APSwissVisite
         private void Form1_Load(object sender, EventArgs e)
         {
             lireLesEtapes();
+            SQL_marvine.afficherFamille();
+            FetchDecisions();
+            FetchMedicaments();
+            FetchDecision();
         }
 
         private void listeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -33,6 +38,27 @@ namespace APSwissVisite
         private void consultationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_consultation_medicament newFrm = new frm_consultation_medicament();
+            newFrm.MdiParent = this;
+            WindowState = FormWindowState.Maximized;
+            newFrm.Show();
+        }
+
+        private void ajoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AjoutMedicament newFrm = new AjoutMedicament();
+            newFrm.MdiParent = this;
+            WindowState = FormWindowState.Maximized;
+            newFrm.Show();
+        }
+
+        private void médicamentEnCoursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void consultationMédicamentEnCoursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Encoure newFrm = new Encoure();
             newFrm.MdiParent = this;
             WindowState = FormWindowState.Maximized;
             newFrm.Show();

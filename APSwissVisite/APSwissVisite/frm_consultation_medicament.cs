@@ -20,7 +20,7 @@ namespace APSwissVisite
         private void frm_consultation_medicament_Load(object sender, EventArgs e)
         {
             lvListeNombre.Items.Clear();
-            SQL.afficherFamille(); //rechercher la fonction SQL
+            SQL_marvine.afficherFamille(); //rechercher la fonction SQL
             afficherListe();
         }
 
@@ -49,7 +49,7 @@ namespace APSwissVisite
             int idx = lvListeNombre.SelectedIndices[0];
             if (idx >= 0)
             {
-                foreach (Medicament leMedicament in SQL.afficherMedicaments(lvListeNombre.Items[idx].SubItems[0].Text))
+                foreach (Medicament leMedicament in SQL_marvine.afficherMedicaments(lvListeNombre.Items[idx].SubItems[0].Text))
                 {
                     if (lvListeNombre.Items[idx].SubItems[0].Text == leMedicament.getLaFamille().getCode())
                     {

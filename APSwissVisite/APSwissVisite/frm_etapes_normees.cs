@@ -36,7 +36,7 @@ namespace APSwissVisite
         {
             lvEtapeNormee.Items.Clear();
             chargerListe();
-            SQL.lireLesEtapes();
+            SQL_marvine.lireLesEtapes();
         }
 
         private void lvEtapeNormee_SelectedIndexChanged(object sender, EventArgs e)

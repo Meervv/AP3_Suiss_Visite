@@ -33,9 +33,12 @@ namespace APSwissVisite
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.listeÉtapesNorméesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.médicamentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ajoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.workflowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultationMédicamentEnCoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +47,8 @@ namespace APSwissVisite
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listeÉtapesNorméesToolStripMenuItem,
-            this.médicamentsToolStripMenuItem});
+            this.médicamentsToolStripMenuItem,
+            this.workflowToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -67,16 +71,11 @@ namespace APSwissVisite
             this.listeToolStripMenuItem.Text = "Liste";
             this.listeToolStripMenuItem.Click += new System.EventHandler(this.listeToolStripMenuItem_Click);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
             // médicamentsToolStripMenuItem
             // 
             this.médicamentsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.consultationToolStripMenuItem});
+            this.consultationToolStripMenuItem,
+            this.ajoutToolStripMenuItem});
             this.médicamentsToolStripMenuItem.Name = "médicamentsToolStripMenuItem";
             this.médicamentsToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
             this.médicamentsToolStripMenuItem.Text = "Médicaments";
@@ -87,6 +86,34 @@ namespace APSwissVisite
             this.consultationToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.consultationToolStripMenuItem.Text = "Consultation";
             this.consultationToolStripMenuItem.Click += new System.EventHandler(this.consultationToolStripMenuItem_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // ajoutToolStripMenuItem
+            // 
+            this.ajoutToolStripMenuItem.Name = "ajoutToolStripMenuItem";
+            this.ajoutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.ajoutToolStripMenuItem.Text = "Ajout ";
+            this.ajoutToolStripMenuItem.Click += new System.EventHandler(this.ajoutToolStripMenuItem_Click);
+            // 
+            // workflowToolStripMenuItem
+            // 
+            this.workflowToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.consultationMédicamentEnCoursToolStripMenuItem});
+            this.workflowToolStripMenuItem.Name = "workflowToolStripMenuItem";
+            this.workflowToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
+            this.workflowToolStripMenuItem.Text = "Workflow";
+            // 
+            // consultationMédicamentEnCoursToolStripMenuItem
+            // 
+            this.consultationMédicamentEnCoursToolStripMenuItem.Name = "consultationMédicamentEnCoursToolStripMenuItem";
+            this.consultationMédicamentEnCoursToolStripMenuItem.Size = new System.Drawing.Size(321, 26);
+            this.consultationMédicamentEnCoursToolStripMenuItem.Text = "Consultation médicament en cours";
+            this.consultationMédicamentEnCoursToolStripMenuItem.Click += new System.EventHandler(this.consultationMédicamentEnCoursToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -114,6 +141,9 @@ namespace APSwissVisite
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem médicamentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ajoutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem workflowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultationMédicamentEnCoursToolStripMenuItem;
     }
 }
 

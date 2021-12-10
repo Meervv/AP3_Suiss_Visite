@@ -2,7 +2,6 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace APSwissVisite
 {
@@ -146,12 +145,15 @@ namespace APSwissVisite
         public static Medicament MedicamentGetByDepotLegal(string depotLegal)
         {
             Connexion.Open();
-
             SqlCommand command = new SqlCommand("prc_getMedicamentByDebot", Connexion) { CommandType = CommandType.StoredProcedure };
             command.Parameters.Add(new SqlParameter("@depotLegal", SqlDbType.VarChar, 10) { Value = depotLegal });
             SqlDataReader result = command.ExecuteReader();
-            if (!result.HasRows) return null;
             result.Read();
+            if (!result.HasRows)
+            {
+                Connexion.Close();
+                return null;
+            }
             Medicament M = new Medicament(depotLegal, result.GetString(1), result.GetString(3), result.GetString(4), result.GetString(5), result.GetString(2), false);
             Connexion.Close();
             GetMedicamentWorkflow(M);
@@ -183,8 +185,8 @@ namespace APSwissVisite
         public static void FamilleIncrementCount(string codeFamille)
         {
             Connexion.Open();
-            SqlCommand command = new SqlCommand("prc_famille_increment", Connexion);
-            command.Parameters.Add(new SqlParameter("@codeFamille", SqlDbType.NVarChar, 3) { Value = codeFamille });
+            SqlCommand command = new SqlCommand("prc_famille_increment", Connexion) { CommandType = CommandType.StoredProcedure };
+            command.Parameters.Add(new SqlParameter("@codeFamille", SqlDbType.VarChar, 3) { Value = codeFamille });
             command.ExecuteNonQuery();
             Connexion.Close();
         }

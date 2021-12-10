@@ -1,14 +1,11 @@
-﻿using System;
+﻿using System.Windows.Forms;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace APSwissVisite
 {
     public class Etape
     {
-        public static List<Etape> LesEtapes = new List<Etape>();
+        public static List<Etape> LesEtapes = new List<Etape>(9) { null, null, null, null, null, null, null, null, null, null };
 
         public int Num;
         public string Libelle;
@@ -16,7 +13,7 @@ namespace APSwissVisite
         public Etape(int num, string libelle)
         {
             (Num, Libelle) = (num, libelle);
-            LesEtapes.Add(this);
+            LesEtapes[num] = this;
         }
     }
 }

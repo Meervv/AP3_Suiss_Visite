@@ -14,7 +14,7 @@ namespace APSwissVisite
         public Famille Famille;
         public List<Workflow> LesEtapes;
 
-        public Workflow DerniereEtape => LesEtapes[LesEtapes.Count - 1];
+        public Workflow DerniereEtape => LesEtapes.Count == 0 ? null : LesEtapes[LesEtapes.Count - 1];
 
         public Medicament(string depotLegal, string nomCommercial, string composition, string effets, string contreIndications, string codeFamille, bool toList = true)
         {

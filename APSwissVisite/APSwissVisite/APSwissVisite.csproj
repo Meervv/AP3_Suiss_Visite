@@ -56,6 +56,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormConsultationWorkflow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultationWorkflow.Designer.cs">
+      <DependentUpon>FormConsultationWorkflow.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSaisieDecisionEtape.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,9 @@
     <Compile Include="Workflow.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultationWorkflow.resx">
+      <DependentUpon>FormConsultationWorkflow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSaisieDecisionEtape.resx">
       <DependentUpon>FormSaisieDecisionEtape.cs</DependentUpon>

@@ -51,8 +51,8 @@ namespace APSwissVisite
         private void AjoutMedicament_Load(object sender, EventArgs e)
         {
             
-            FetchFamille();
-            FetchMedicaments();
+            //FetchFamille();
+            //FetchMedicaments();
             foreach (Famille f in Famille.LesFamilles.Values)
             {
                 cbCodeFamille.Items.Add(f.Code);

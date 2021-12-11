@@ -19,7 +19,6 @@ namespace APSwissVisite
 
         private void AjoutMedicament_Load(object sender, EventArgs e)
         {
-            SQL_marvine.afficherFamille();
             Dictionary<string, Famille>.KeyCollection lesCles = Globale.lesFamilles.Keys;
             foreach (string leCode in lesCles)
             {

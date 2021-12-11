@@ -13,23 +13,20 @@ namespace APSwissVisite
         private string composition;
         private string effets;
         private string contreIndication;
-        private string amm;
-        private int derniereEtape;
         public Famille laFamille;
         public List<Workflow> LesEtapes;
 
         public Workflow DerniereEtape => LesEtapes.Count == 0 ? null : LesEtapes[LesEtapes.Count - 1];  
-        public Medicament(string leDepot, string leNom, string laCompo, string lesEffets, string contreIndi, string leAmm, int last, string code)
+        public Medicament(string leDepot, string leNom, string laCompo, string lesEffets, string contreIndi, string code, bool toList = true)
         {
             this.depotLegale = leDepot;
             this.nomCommercial = leNom;
             this.composition = laCompo;
             this.effets = lesEffets;
             this.contreIndication = contreIndi;
-            this.amm = leAmm;
-            this.derniereEtape = last;
             this.laFamille = Globale.lesFamilles[code];
-            Globale.lesMedicaments.Add(leDepot, this);
+            if (toList)
+                Globale.lesMedicaments.Add(leDepot, this);
 
         }
 
@@ -40,8 +37,6 @@ namespace APSwissVisite
         public Famille getLaFamille() { return this.laFamille; }
         public string getEffets() { return this.effets; }
         public string getContreIndic() { return this.contreIndication; }
-        public string getAmm() { return this.amm; }
-        public int getDerniereEtape() { return this.derniereEtape; }
 
         public List<Workflow> GetWorkflows() { return this.LesEtapes; }
     }

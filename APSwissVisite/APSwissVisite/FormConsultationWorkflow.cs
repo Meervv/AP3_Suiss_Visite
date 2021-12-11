@@ -32,7 +32,7 @@ namespace APSwissVisite
         }
 
         private void CbMedicaments_SelectedIndexChanged(object sender, EventArgs e)
-        {   
+        {
             LvEtapes.Items.Clear();
             List<Workflow> lesEtapes = Globale.lesMedicaments[CbMedicaments.Text].LesEtapes;
             if (lesEtapes is null)

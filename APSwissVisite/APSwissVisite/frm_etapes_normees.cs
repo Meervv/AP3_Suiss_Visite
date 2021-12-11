@@ -20,7 +20,7 @@ namespace APSwissVisite
         {
             foreach (Etape lEtape in Globale.lesEtapes)
             {
-                if (lEtape.GetType() == typeof(EtapeNormee)) //check le type de la class
+                if (lEtape != null && lEtape.GetType() == typeof(EtapeNormee))
                 {
                     EtapeNormee etape = (EtapeNormee)lEtape;
                     ListViewItem ligne = new ListViewItem();

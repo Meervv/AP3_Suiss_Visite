@@ -78,8 +78,6 @@ namespace APSwissVisite
                 int nbMedicAmm = int.Parse(SqlExec["FAM_NBMEDIC"].ToString());
 
                 Famille laFamille = new Famille(codeFamille, libelleFamille, nbMedicAmm);
-
-                Globale.lesFamilles.Add(codeFamille, laFamille);
             }
             Connexion.Close();
         }
@@ -111,7 +109,7 @@ namespace APSwissVisite
                 string prix = SqlExec["MED_PRIXECHANTILLON"].ToString();
                 string derniereEtape = SqlExec["derniere_etape"].ToString();
 
-                Medicament unMedicament = new Medicament(depotLegal, nomCommerc, compo, effets, contreindic, "0", 1, famCode);
+                Medicament unMedicament = new Medicament(depotLegal, nomCommerc, compo, effets, contreindic, famCode, false);
 
                 lesMedoc.Add(unMedicament);
 

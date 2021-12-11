@@ -2,6 +2,7 @@
 using System.Data;
 using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace APSwissVisite
 {
@@ -11,6 +12,29 @@ namespace APSwissVisite
         private const string ConnexionString = @"Data Source=BTS2020-17\SQLEXPRESS;Initial Catalog=GSB_gesAMM;Integrated Security=True";
         internal static SqlConnection Connexion = new SqlConnection(ConnexionString);
 
+        public static void FetchEtapes()
+        {
+            Connexion.Open();
+            SqlCommand command = new SqlCommand("prc_listeToutesEtapes", Connexion) { CommandType = CommandType.StoredProcedure };
+            SqlDataReader result = command.ExecuteReader();
+
+            while (result.Read())
+            {
+                int numEtape = (int)result["num"];
+                string libelleEtape = (string)result["libelle"];
+                if (result["norme"].GetType() == typeof(DBNull))
+                {
+                    new Etape(numEtape, libelleEtape);
+                }
+                else
+                {
+                    string norme = (string)result["norme"];
+                    DateTime dateNorme = DateTime.Parse(result["dateNorme"].ToString());
+                    new EtapeNormee(numEtape, libelleEtape, norme, dateNorme);
+                }
+            }
+            Connexion.Close();
+        }
         public static void FetchMedicaments()
         {
             Connexion.Open();
@@ -27,7 +51,7 @@ namespace APSwissVisite
                 string contreIndic = (string)result["MED_CONTREINDIC"];
                 string codeFamille = (string)result["FAM_CODE"];
 
-                new Medicament(depotLegal, nomCommercial, composition, effets, contreIndic, "", 1, codeFamille); // Ajouté direct au dico
+                new Medicament(depotLegal, nomCommercial, composition, effets, contreIndic, codeFamille); // Ajouté direct au dico
             }
 
             Connexion.Close();

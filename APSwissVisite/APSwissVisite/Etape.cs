@@ -15,7 +15,7 @@ namespace APSwissVisite
         {
             this.num = num;
             this.libelle = libelle;
-            Globale.lesEtapes.Add(this);
+            Globale.lesEtapes[num] = this;
         }
 
         public int getNum() { return this.num; }

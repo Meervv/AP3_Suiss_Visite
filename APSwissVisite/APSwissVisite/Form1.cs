@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using static APSwissVisite.SQL_tristan;
 using static APSwissVisite.SQL_marvine;
+using static APSwissVisite.SQL_yohann;
 
 namespace APSwissVisite
 {
@@ -15,11 +16,10 @@ namespace APSwissVisite
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            lireLesEtapes();
+            FetchEtapes();
             afficherFamille();
             FetchDecisions();
             FetchMedicaments();
-            FetchDecision();
         }
 
         private void listeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -67,6 +67,14 @@ namespace APSwissVisite
         private void consultationDesWorkflowsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormConsultationWorkflow newFrm = new FormConsultationWorkflow();
+            newFrm.MdiParent = this;
+            WindowState = FormWindowState.Maximized;
+            newFrm.Show();
+        }
+
+        private void saisieDécisionÉtapeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSaisieDecisionEtape newFrm = new FormSaisieDecisionEtape();
             newFrm.MdiParent = this;
             WindowState = FormWindowState.Maximized;
             newFrm.Show();

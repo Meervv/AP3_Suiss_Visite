@@ -1,11 +1,8 @@
 ﻿using System.Data.SqlClient;
-<<<<<<< Updated upstream
-=======
 using System;
 using System.Data;
 using System.Collections.Generic;
 using System.Windows.Forms;
->>>>>>> Stashed changes
 
 namespace APSwissVisite
 {
@@ -14,8 +11,6 @@ namespace APSwissVisite
         // Propriété Data Source à changer /!\
         private const string ConnexionString = @"Data Source=BTS2020-12\SQLEXPRESS;Initial Catalog=GSB_gesAMM;Integrated Security=True";
         internal static SqlConnection Connexion = new SqlConnection(ConnexionString);
-<<<<<<< Updated upstream
-=======
 
         #region Fetch
 
@@ -272,6 +267,5 @@ namespace APSwissVisite
         }
 
         #endregion
->>>>>>> Stashed changes
     }
 }

@@ -2,10 +2,8 @@
 
 namespace APSwissVisite
 {
-    public sealed class EtapeNormee
+    public sealed class EtapeNormee : Etape
     {
-<<<<<<< Updated upstream
-=======
         public string Norme;
         public DateTime Date;
 
@@ -14,6 +12,5 @@ namespace APSwissVisite
             Norme = laNorme;
             Date = dateNorme;
         }
->>>>>>> Stashed changes
     }
 }

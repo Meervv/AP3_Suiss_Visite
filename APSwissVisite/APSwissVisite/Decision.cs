@@ -8,8 +8,6 @@ namespace APSwissVisite
 {
     public sealed class Decision
     {
-<<<<<<< Updated upstream
-=======
         public int ID;
         public string Libelle;
 
@@ -19,6 +17,5 @@ namespace APSwissVisite
             Libelle = libelle;
             Globale.Decisions.Add(this);
         }
->>>>>>> Stashed changes
     }
 }

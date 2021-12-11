@@ -69,8 +69,6 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-<<<<<<< Updated upstream
-=======
     <Compile Include="FormConsultationWorkflow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,7 +94,6 @@
       <DependentUpon>frm_etapes_normees.cs</DependentUpon>
     </Compile>
     <Compile Include="Globale.cs" />
->>>>>>> Stashed changes
     <Compile Include="Medicament.cs" />
     <Compile Include="frm_modifEtape.cs">
       <SubType>Form</SubType>
@@ -117,8 +114,6 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< Updated upstream
-=======
     <EmbeddedResource Include="FormConsultationWorkflow.resx">
       <DependentUpon>FormConsultationWorkflow.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,7 +129,6 @@
     <EmbeddedResource Include="frm_modifEtape.resx">
       <DependentUpon>frm_modifEtape.cs</DependentUpon>
     </EmbeddedResource>
->>>>>>> Stashed changes
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

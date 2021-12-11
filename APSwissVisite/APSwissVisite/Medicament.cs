@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace APSwissVisite
 {
     public sealed class Medicament
     {
-<<<<<<< Updated upstream
-=======
         public string DepotLegal;
         public string NomCommercial;
         public string Composition;
@@ -30,6 +24,5 @@ namespace APSwissVisite
             if (toList)
                 Globale.Medicaments.Add(leDepot, this);
         }
->>>>>>> Stashed changes
     }
 }

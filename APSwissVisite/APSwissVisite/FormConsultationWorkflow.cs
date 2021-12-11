@@ -39,11 +39,11 @@ namespace APSwissVisite
             }
             foreach (Workflow W in lesEtapes)
             {
-                int numEtape = W.getNum();
+                int numEtape = W.NumEtape;
                 Etape etape = Globale.Etapes[numEtape];
                 ListViewItem ligne = new ListViewItem() { Text = numEtape.ToString() };
                 ligne.SubItems.Add(etape.Libelle);
-                ligne.SubItems.Add(W.getDate().Date.ToString());
+                ligne.SubItems.Add(W.DateDecison.Date.ToString());
                 ligne.SubItems.Add(Globale.Decisions[W.IdDecision].Libelle);
                 if (etape.GetType() == typeof(EtapeNormee))
                 {

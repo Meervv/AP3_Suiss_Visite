@@ -1,15 +1,3 @@
-<<<<<<< Updated upstream
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace APSwissVisite
-{
-    public sealed class Famille
-    {
-=======
 ﻿namespace APSwissVisite
 {
     public sealed class Famille
@@ -25,6 +13,5 @@ namespace APSwissVisite
             NbMedicamentAmm = nbMedi;
             Globale.Familles.Add(leCode, this);
         }
->>>>>>> Stashed changes
     }
 }

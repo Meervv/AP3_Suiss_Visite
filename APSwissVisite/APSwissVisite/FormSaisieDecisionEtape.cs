@@ -83,7 +83,7 @@ namespace APSwissVisite
             else TbLastEtapeNomNorme.Text = TbLastEtapeNormeDate.Text = string.Empty;
             TbLastEtapeNum.Text = lastEtape.Num.ToString();
             TbLastEtapeLibelle.Text = lastEtape.Libelle;
-            TbLastEtapeDate.Text = Current.DerniereEtape.getDate().Date.ToString();
+            TbLastEtapeDate.Text = Current.DerniereEtape.DateDecison.Date.ToString();
         }
 
         private void UpdateNextEtape()

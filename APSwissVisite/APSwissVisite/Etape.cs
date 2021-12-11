@@ -1,19 +1,7 @@
-<<<<<<< Updated upstream
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace APSwissVisite
-=======
 ﻿namespace APSwissVisite
->>>>>>> Stashed changes
 {
-    public sealed class Etape
+    public class Etape
     {
-<<<<<<< Updated upstream
-=======
         public int Num;
         public string Libelle;
 
@@ -23,6 +11,5 @@ namespace APSwissVisite
             Libelle = libelle;
             Globale.Etapes[num] = this;
         }
->>>>>>> Stashed changes
     }
 }

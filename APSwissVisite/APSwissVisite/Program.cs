@@ -8,6 +8,7 @@ namespace APSwissVisite
 {
     static class Program
     {
+        // While (true) break;
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>
@@ -16,7 +17,7 @@ namespace APSwissVisite
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
         }
     }
 }

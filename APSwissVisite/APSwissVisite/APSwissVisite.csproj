@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>APSwissVisite</RootNamespace>
     <AssemblyName>APSwissVisite</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,24 +47,94 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AjoutMedicament.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjoutMedicament.Designer.cs">
+      <DependentUpon>AjoutMedicament.cs</DependentUpon>
+    </Compile>
     <Compile Include="Decision.cs" />
+    <Compile Include="Encours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Encours.Designer.cs">
+      <DependentUpon>Encours.cs</DependentUpon>
+    </Compile>
     <Compile Include="Etape.cs" />
     <Compile Include="EtapeNormee.cs" />
     <Compile Include="Famille.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+<<<<<<< Updated upstream
+=======
+    <Compile Include="FormConsultationWorkflow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultationWorkflow.Designer.cs">
+      <DependentUpon>FormConsultationWorkflow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSaisieDecisionEtape.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSaisieDecisionEtape.Designer.cs">
+      <DependentUpon>FormSaisieDecisionEtape.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_consultation_medicament.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_consultation_medicament.Designer.cs">
+      <DependentUpon>frm_consultation_medicament.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_etapes_normees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_etapes_normees.Designer.cs">
+      <DependentUpon>frm_etapes_normees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Globale.cs" />
+>>>>>>> Stashed changes
     <Compile Include="Medicament.cs" />
+    <Compile Include="frm_modifEtape.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_modifEtape.Designer.cs">
+      <DependentUpon>frm_modifEtape.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQL.cs" />
     <Compile Include="Workflow.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="AjoutMedicament.resx">
+      <DependentUpon>AjoutMedicament.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Encours.resx">
+      <DependentUpon>Encours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+<<<<<<< Updated upstream
+=======
+    <EmbeddedResource Include="FormConsultationWorkflow.resx">
+      <DependentUpon>FormConsultationWorkflow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSaisieDecisionEtape.resx">
+      <DependentUpon>FormSaisieDecisionEtape.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_consultation_medicament.resx">
+      <DependentUpon>frm_consultation_medicament.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_etapes_normees.resx">
+      <DependentUpon>frm_etapes_normees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_modifEtape.resx">
+      <DependentUpon>frm_modifEtape.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> Stashed changes
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -72,6 +143,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

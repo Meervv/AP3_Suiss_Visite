@@ -8,3 +8,40 @@ C:\Users\demaisoy\Documents\C#\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\
 C:\Users\demaisoy\Documents\C#\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.csproj.CoreCompileInputs.cache
 C:\Users\demaisoy\Documents\C#\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.exe
 C:\Users\demaisoy\Documents\C#\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.pdb
+<<<<<<< Updated upstream
+=======
+E:\BTS 2\Semestre 1\AP\AP3\github\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\bin\Debug\APSwissVisite.exe.config
+E:\BTS 2\Semestre 1\AP\AP3\github\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\bin\Debug\APSwissVisite.exe
+E:\BTS 2\Semestre 1\AP\AP3\github\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\bin\Debug\APSwissVisite.pdb
+E:\BTS 2\Semestre 1\AP\AP3\github\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.csproj.AssemblyReference.cache
+E:\BTS 2\Semestre 1\AP\AP3\github\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.Form1.resources
+E:\BTS 2\Semestre 1\AP\AP3\github\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.Properties.Resources.resources
+E:\BTS 2\Semestre 1\AP\AP3\github\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.csproj.GenerateResource.cache
+E:\BTS 2\Semestre 1\AP\AP3\github\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.csproj.CoreCompileInputs.cache
+E:\BTS 2\Semestre 1\AP\AP3\github\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.exe
+E:\BTS 2\Semestre 1\AP\AP3\github\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.pdb
+E:\BTS 2\Semestre 1\AP\AP3\github\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.frm_etapes_normees.resources
+E:\BTS 2\Semestre 1\AP\AP3\github\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.frm_modifEtape.resources
+E:\BTS 2\Semestre 1\AP\AP3\github\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.frm_consultation_medicament.resources
+E:\BTS 2\Semestre 1\AP\AP3\github\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.AjoutMedicament.resources
+E:\BTS 2\Semestre 1\AP\AP3\github\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.Encoure.resources
+E:\BTS 2\Semestre 1\AP\AP3\github\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.FormConsultationWorkflow.resources
+E:\BTS 2\Semestre 1\AP\AP3\github\AP3_Suiss_Visite\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.FormSaisieDecisionEtape.resources
+C:\Users\demaisoy\Downloads\AP3_Suiss_Visite-Hotfix-Marvine\APSwissVisite\APSwissVisite\bin\Debug\APSwissVisite.exe.config
+C:\Users\demaisoy\Downloads\AP3_Suiss_Visite-Hotfix-Marvine\APSwissVisite\APSwissVisite\bin\Debug\APSwissVisite.exe
+C:\Users\demaisoy\Downloads\AP3_Suiss_Visite-Hotfix-Marvine\APSwissVisite\APSwissVisite\bin\Debug\APSwissVisite.pdb
+C:\Users\demaisoy\Downloads\AP3_Suiss_Visite-Hotfix-Marvine\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.csproj.AssemblyReference.cache
+C:\Users\demaisoy\Downloads\AP3_Suiss_Visite-Hotfix-Marvine\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.AjoutMedicament.resources
+C:\Users\demaisoy\Downloads\AP3_Suiss_Visite-Hotfix-Marvine\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.FormConsultationWorkflow.resources
+C:\Users\demaisoy\Downloads\AP3_Suiss_Visite-Hotfix-Marvine\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.FormSaisieDecisionEtape.resources
+C:\Users\demaisoy\Downloads\AP3_Suiss_Visite-Hotfix-Marvine\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.frm_consultation_medicament.resources
+C:\Users\demaisoy\Downloads\AP3_Suiss_Visite-Hotfix-Marvine\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.frm_etapes_normees.resources
+C:\Users\demaisoy\Downloads\AP3_Suiss_Visite-Hotfix-Marvine\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.frm_modifEtape.resources
+C:\Users\demaisoy\Downloads\AP3_Suiss_Visite-Hotfix-Marvine\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.Properties.Resources.resources
+C:\Users\demaisoy\Downloads\AP3_Suiss_Visite-Hotfix-Marvine\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.csproj.GenerateResource.cache
+C:\Users\demaisoy\Downloads\AP3_Suiss_Visite-Hotfix-Marvine\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.csproj.CoreCompileInputs.cache
+C:\Users\demaisoy\Downloads\AP3_Suiss_Visite-Hotfix-Marvine\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.exe
+C:\Users\demaisoy\Downloads\AP3_Suiss_Visite-Hotfix-Marvine\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.pdb
+C:\Users\demaisoy\Downloads\AP3_Suiss_Visite-Hotfix-Marvine\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.Encours.resources
+C:\Users\demaisoy\Downloads\AP3_Suiss_Visite-Hotfix-Marvine\APSwissVisite\APSwissVisite\obj\Debug\APSwissVisite.MainForm.resources
+>>>>>>> Stashed changes

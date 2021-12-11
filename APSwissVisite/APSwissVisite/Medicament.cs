@@ -18,6 +18,7 @@ namespace APSwissVisite
         public Famille laFamille;
         public List<Workflow> LesEtapes;
 
+        public Workflow DerniereEtape => LesEtapes.Count == 0 ? null : LesEtapes[LesEtapes.Count - 1];  
         public Medicament(string leDepot, string leNom, string laCompo, string lesEffets, string contreIndi, string leAmm, int last, string code)
         {
             this.depotLegale = leDepot;
@@ -29,6 +30,7 @@ namespace APSwissVisite
             this.derniereEtape = last;
             this.laFamille = Globale.lesFamilles[code];
             Globale.lesMedicaments.Add(leDepot, this);
+
         }
 
         public string getDepotLegale() { return this.depotLegale; }

@@ -20,5 +20,10 @@ namespace APSwissVisite
             IdDecision = iddecision;
             Depotlegal = depotlegal;
         }
+
+        public DateTime getDate() { return this.DateDecison; }
+        public int getNum() { return this.NumEtape; }
+        public int getId() { return this.IdDecision; }
+        public string getDepotLegal() { return this.Depotlegal; }
     }
 }

@@ -137,6 +137,7 @@ namespace APSwissVisite
             M.LesEtapes = workflows;
             Connexion.Close();
         }
+
         public static void FetchDecision()
         {
             Connexion.Open();

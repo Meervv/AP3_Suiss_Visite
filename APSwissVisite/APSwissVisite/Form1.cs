@@ -16,7 +16,7 @@ namespace APSwissVisite
         private void Form1_Load(object sender, EventArgs e)
         {
             lireLesEtapes();
-            SQL_marvine.afficherFamille();
+            afficherFamille();
             FetchDecisions();
             FetchMedicaments();
             FetchDecision();
@@ -59,6 +59,14 @@ namespace APSwissVisite
         private void consultationMédicamentEnCoursToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Encoure newFrm = new Encoure();
+            newFrm.MdiParent = this;
+            WindowState = FormWindowState.Maximized;
+            newFrm.Show();
+        }
+
+        private void consultationDesWorkflowsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormConsultationWorkflow newFrm = new FormConsultationWorkflow();
             newFrm.MdiParent = this;
             WindowState = FormWindowState.Maximized;
             newFrm.Show();

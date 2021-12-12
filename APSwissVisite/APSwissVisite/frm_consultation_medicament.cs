@@ -48,6 +48,7 @@ namespace APSwissVisite
             int idx = lvListeNombre.SelectedIndices[0];
             if (idx >= 0)
             {
+                //chercher les médicament qui sont égales au code famille de la fonction GetFamilleMedicaments
                 foreach (Medicament leMedicament in SQL.GetFamilleMedicaments(lvListeNombre.Items[idx].SubItems[0].Text))
                 {
                     if (lvListeNombre.Items[idx].SubItems[0].Text == leMedicament.Famille.Code)

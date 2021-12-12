@@ -46,12 +46,15 @@ namespace APSwissVisite
                 return;
             }
             int idx = lvEtapeNormee.SelectedIndices[0];
-            
+
             if (idx >= 0)
             {
+                //on récupère la norme et la date et l'index au clique de la listView
                 string norm = lvEtapeNormee.Items[idx].SubItems[2].Text;
                 string date = lvEtapeNormee.Items[idx].SubItems[3].Text;
                 int index = int.Parse(lvEtapeNormee.Items[idx].SubItems[0].Text);
+
+                //on créer et affiche une forme qui récupère les infos
                 frm_modifEtape newFrm = new frm_modifEtape(index, norm, date);
                 newFrm.TopMost = true;
                 newFrm.Show();

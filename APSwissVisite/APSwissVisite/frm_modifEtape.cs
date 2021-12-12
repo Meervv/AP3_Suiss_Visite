@@ -10,13 +10,17 @@ namespace APSwissVisite
         public frm_modifEtape(int idx, string norm, string date)
         {
             InitializeComponent();
+
+            //j'affiche les infos récupérés dans les textBox
             tbNorme.Text = norm;
             tbDate.Text = date;
+
+            //ma variable index récupère l'index au clique de la listView
             index = idx;
         }
         private void frm_modifEtape_Load(object sender, EventArgs e)
         {
-            
+
         }
         private void btModif_Click(object sender, EventArgs e)
         {
@@ -31,6 +35,8 @@ namespace APSwissVisite
             else
             {
                 MessageBox.Show(this.index.ToString());
+
+                //j'exécute ma fonction qui UPDATE ma table
                 UpdateEtape(tbNorme.Text, DateTime.Parse(tbDate.Text), index);
                 this.Close();
             }

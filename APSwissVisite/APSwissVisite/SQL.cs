@@ -105,14 +105,18 @@ namespace APSwissVisite
         public static void UpdateEtape(string norme, DateTime date, int id)
         {
             Connexion.Open();
+            //sqlcommand --> instruction de procédure stockée à exécuter
             SqlCommand maRequete = new SqlCommand("prc_updateEtapes", Connexion) { CommandType = CommandType.StoredProcedure };
 
+            //sqlparameter --> représente un paramètre passée dans la procédure stockée
             SqlParameter paramNorme = new SqlParameter("@norme", SqlDbType.VarChar, 100) { Value = norme };
             SqlParameter paramDate = new SqlParameter("@date", SqlDbType.DateTime) { Value = date };
             SqlParameter paramId = new SqlParameter("@id", SqlDbType.Int, 2) { Value = id };
 
+            //ajoute les éléments à la fin de l'objet  sqlparameter
             maRequete.Parameters.AddRange(new SqlParameter[] { paramNorme, paramDate, paramId });
 
+            //exécute l'instruction de la procédure stockée et return le nombre de lignes
             maRequete.ExecuteNonQuery();
 
             Connexion.Close();

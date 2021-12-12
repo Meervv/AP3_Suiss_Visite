@@ -38,7 +38,8 @@ Nous avions également plusieurs contraintes à respecter :
 ## Installation
 
 - Cloner ou télécharger le .zip
-- Créer la base de données avec le fichier SwissVisiteBdd.sql
+- Créer la base de données avec le fichier SwissVisiteBdd.sql dans le dossier APSuissVisite/
+- Changer le mode de connexion pour mettre celui de votre SQL Server
 - APSwissVisite\bin\Debug\ et executez le fichier APSwissVisite.exe
 
 PS : Pour les détails de l'installation, se référencer au fichier word "Document_technique" dans le dossier "fiches-techniques".

@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace APSwissVisite
+﻿namespace APSwissVisite
 {
-    public sealed class Etape
+    public class Etape
     {
+        public int Num;
+        public string Libelle;
+
+        public Etape(int num, string libelle)
+        {
+            Num = num;
+            Libelle = libelle;
+            Globale.Etapes[num] = this;
+        }
     }
 }
